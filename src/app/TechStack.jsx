@@ -70,10 +70,7 @@ export default function TechStackSection() {
     const [showIcons, setShowIcons] = useState(USE_ICONS);
 
     return (
-        <section className="relative py-16 overflow-hidden">
-            <div className="text-4xl pt-6 text-center font-medium font-sans flex justify-center mb-4">
-                <PointerHighlight className="bg-background">TECH & STACKS</PointerHighlight>
-            </div>
+        <section className="relative mb-6 overflow-hidden h-screen snap-start">
 
             {/* <button
                 onClick={() => setShowIcons(!showIcons)}
@@ -83,7 +80,7 @@ export default function TechStackSection() {
                 {showIcons ? 'Icons Enabled' : 'Icons Disabled'}
             </button> */}
 
-            <div className="relative mb-0 overflow-hidden py-4 border-y border-muted bg-background">
+            <div className="relative snap-start mb-0 overflow-hidden py-4 border-y border-muted bg-background">
                 <motion.div
                     className="flex"
                     animate={{ x: ['0%', '-100%'] }}
@@ -110,8 +107,12 @@ export default function TechStackSection() {
                 <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background pointer-events-none" />
             </div>
 
-            <div className="md:flex max-h-[100vh] overflow-y-auto mt-3 hide-scrollbar h-screen">
-                <div className="sticky -z-1 top-20 self-start w-full md:w-[50%] h-fit flex items-center justify-center">
+            <div className="md:flex snap-start h-screen md:snap-y snap-mandatory overflow-y-auto hide-scrollbar">
+
+                <div className="md:sticky snap-start  -z-1 top-10 self-start w-full md:w-[50%] h-fit flex flex-col items-center justify-center">
+                    <div className="text-4xl  text-center font-medium font-sans flex justify-center">
+                        <PointerHighlight className="bg-background">TECH & SKILLS</PointerHighlight>
+                    </div>
                     <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
                         <OrbitingCircles iconSize={40}>
                             {[...categories[0].techs].map((tech, index) => {
@@ -161,8 +162,8 @@ export default function TechStackSection() {
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.2 }}
-                            className="rounded-3xl p-6 bg-background backdrop-blur-md border border-muted mx-4 transition-all"
+                            // transition={{ duration: 0.5, delay: index * 0.2 }}
+                            className="snap-start min-h-screen pt-4 flex-col justify-center px-6 bg-background/50 backdrop-blur-md border border-muted transition-all"
                         >
                             <h2 className="text-2xl font-sans font-bold tracking-wide mb-5 text-center underline decoration-muted underline-offset-4">
                                 {category.title}
