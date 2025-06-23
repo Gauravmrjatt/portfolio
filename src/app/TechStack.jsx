@@ -5,9 +5,9 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PointerHighlight } from '@/components/ui/pointer-highlight';
 import { DotPattern } from '@/components/magicui/dot-pattern';
-import StackIcon from "tech-stack-icons";
 import { OrbitingCircles } from "@/components/magicui/orbiting-circles";
 
+import { Icon } from '@iconify/react';
 
 
 const USE_ICONS = true;
@@ -15,60 +15,90 @@ const USE_ICONS = true;
 const categories = [
     {
         title: 'LANGUAGES',
-        techs: ['js', 'typescript', 'php', 'c++', 'java', 'python', 'bash'],
+        techs: ['skill-icons:javascript', 'skill-icons:typescript', 'logos:php', 'skill-icons:cpp', 'logos:java', 'logos:python', 'logos:bash-icon'],
     },
     {
         title: 'FRONTEND',
-        techs: ['html5', 'css3', 'tailwindcss', 'js', 'typescript', 'react', 'nextjs', 'jquery', 'redux', 'pugjs', 'threejs', 'shadcnui', 'materialui'],
+        techs: ['logos:html-5', 'skill-icons:css', 'skill-icons:tailwindcss-dark', 'skill-icons:javascript', 'skill-icons:typescript', 'logos:react', 'logos:nextjs-icon', 'skill-icons:jquery', 'logos:redux', 'logos:pug', 'skill-icons:threejs-dark', 'simple-icons:shadcnui', 'logos:material-ui', 'devicon:zustand', 'simple-icons:nextui'],
     },
     {
         title: 'BACKEND',
-        techs: ['nodejs', 'expressjs', 'rest', 'graphql', 'socketio', 'jwt', 'pwa'],
+        techs: ['logos:nodejs-icon', 'skill-icons:expressjs-dark', 'vscode-icons:file-type-rest', 'material-icon-theme:graphql', 'logos:socket-io', 'logos:jwt-icon', 'logos:pwa'],
     },
     {
         title: 'DATABASES',
-        techs: ['mongodb', 'postgresql', 'mysql', 'redis'],
+        techs: ['logos:mongodb-icon', 'logos:postgresql', 'logos:mysql', 'devicon:redis'],
     },
     {
         title: 'ORMs / ODMs / Validation',
-        techs: ['mongoose', 'prisma', 'zod'],
+        techs: ['devicon:mongoose-wordmark', 'material-icon-theme:prisma', 'logos:zod'],
     },
     {
         title: 'DEVOPS & CLOUD',
-        techs: ['docker', 'dockercompose', 'nginx', 'ci', 'githubactions', 'vercel', 'aws', 'coolify'],
+        techs: ['material-icon-theme:docker', 'material-icon-theme:nginx', 'devicon:githubactions', 'skill-icons:vercel-dark', 'skill-icons:aws-dark', 'coolify', 'ci'],
     },
     {
         title: 'MONITORING & LOGGING',
-        techs: ['grafana', 'prometheus', 'loki', 'senatry', 'bugsink'],
+        techs: ['devicon:grafana', 'devicon:prometheus', 'loki', 'material-icon-theme:sentry', 'bugsink'],
     },
     {
         title: 'TOOLS & UTILITIES',
-        techs: ['git', 'github', 'vscode', 'postman', 'figma', 'firebase', 'auth0', 'json'],
+        techs: ['skill-icons:git', 'skill-icons:github-light', 'material-icon-theme:vscode', 'devicon:postman', 'logos:figma', 'vscode-icons:file-type-firebase', 'simple-icons:auth0', 'material-icon-theme:json'],
     },
 ];
 
 const allTechs = Array.from(new Set(categories.flatMap(category => category.techs)));
+const formatTechName = (tech) => {
+    const replacements = {
+        file: "FIREBAE",
+        js: 'JS',
+        css: 'CSS',
+        html: 'HTML',
+        pwa: 'PWA',
+        jwt: 'JWT',
+        rest: 'REST',
+        ci: 'CI/CD',
+        cpp: 'C++',
+        'c++': 'C++',
+        socketio: 'Socket.IO',
+        redis: 'Redis',
+        mysql: 'MySQL',
+        mongodb: 'MongoDB',
+        php: 'PHP',
+        docker: 'Docker',
+        graphql: 'GraphQL',
+        tailwindcss: 'Tailwind CSS',
+        nextjs2: 'Next.js',
+        nextjs: 'Next.js',
+        nodejs: 'Node.js',
+        'openmoney-api': 'OpenMoney API',
+        'paytm-api': 'Paytm API',
+        'telegram-api': 'Telegram API',
+        'youtube-api': 'YouTube API',
+        'rabbit-mq': 'RabbitMQ',
+        'bull-mq': 'BullMQ',
+        grafana: 'Grafana',
+        prometheus: 'Prometheus',
+        loki: 'Loki',
+        coolify: 'Coolify',
+        senatry: 'Senatry'
+    };
 
-const formatTechName = (tech) => tech
-    .replace(/([a-z])([A-Z])/g, '$1 $2')
-    .replace(/\d+$/, '')
-    .replace('js', 'JS')
-    .replace('css', 'CSS')
-    .replace('html', 'HTML')
-    .replace('pwa', 'PWA')
-    .replace('jwt', 'JWT')
-    .replace('rest', 'REST')
-    .replace('ci', 'CI/CD')
-    .replace('c++', 'C++')
-    .toUpperCase();
+    // extract from "LOGOS:NEXTJS-ICON" ➝ "nextjs"
+    const match = tech.toLowerCase().match(/:(.*?)(?:-|$)/);
+    const key = match ? match[1] : tech.toLowerCase();
+
+    // return formatted from map or fallback
+    return replacements[key] || key.replace(/([a-z])([A-Z])/g, '$1 $2').toUpperCase();
+};
+
 
 const UNSUPPORTED_ICONS = new Set([
-    'socketio', 'rest', 'jwt', 'dockercompose', 'nginx', 'ci', 'githubactions', 'stripe', 'razorpay', 'prometheus', 'loki', 'coolify', 'senatry', 'bugsink'
+    'coolify', 'ci/cd', 'loki', 'bugsink'
 ]);
 
 export default function TechStackSection() {
     const [showIcons, setShowIcons] = useState(USE_ICONS);
-
     return (
         <section className="relative mb-6 overflow-hidden h-screen snap-start">
 
@@ -93,8 +123,7 @@ export default function TechStackSection() {
                             <div key={`${tech}-${index}`} className="flex items-center mx-6">
                                 {shouldShowIcon ? (
                                     <div className="flex flex-col items-center justify-center p-2">
-                                        <StackIcon className="w-10 h-10" name={tech} />
-                                    </div>
+                                        <Icon className="w-8 h-8 mb-1 drop-shadow-md" icon={tech} />  </div>
                                 ) : (
                                     <span className="text-sm font-medium capitalize whitespace-nowrap">
                                         {formatTechName(tech)}
@@ -122,7 +151,7 @@ export default function TechStackSection() {
                                     <div key={`${tech}-${index}`} className="flex items-center mx-6">
                                         {shouldShowIcon ? (
                                             <div className="flex flex-col items-center justify-center p-2">
-                                                <StackIcon className="w-10 h-10" name={tech} />
+                                                <Icon className="w-8 h-8 mb-1 drop-shadow-md" icon={tech} />
                                             </div>
                                         ) : (
                                             <span className="text-sm font-medium capitalize whitespace-nowrap">
@@ -141,7 +170,7 @@ export default function TechStackSection() {
                                     <div key={`${tech}-${index}`} className="flex items-center mx-6">
                                         {shouldShowIcon ? (
                                             <div className="flex flex-col items-center justify-center p-2">
-                                                <StackIcon className="w-10 h-10" name={tech} />
+                                                <Icon className="w-8 h-8 mb-1 drop-shadow-md" icon={tech} />
                                             </div>
                                         ) : (
                                             <span className="text-sm font-medium capitalize whitespace-nowrap">
@@ -168,7 +197,7 @@ export default function TechStackSection() {
                             <h2 className="text-2xl font-sans font-bold tracking-wide mb-5 text-center underline decoration-muted underline-offset-4">
                                 {category.title}
                             </h2>
-                            <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
+                            <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
                                 {category.techs.map((tech, techIndex) => {
                                     const isUnsupported = UNSUPPORTED_ICONS.has(tech);
                                     const shouldShowIcon = showIcons && !isUnsupported;
@@ -185,14 +214,17 @@ export default function TechStackSection() {
                                                 damping: 15,
                                                 delay: techIndex * 0.02,
                                             }}
-                                            className={`flex flex-col items-center justify-center text-center p-3 rounded-xl border border-muted bg-muted/10 hover:bg-muted/30 backdrop-blur-sm transition-all duration-200 cursor-pointer ${!shouldShowIcon ? 'min-h-[80px]' : ''}`}
+                                            className={`flex relative overflow-hidden flex-col items-center justify-center text-center py-3 rounded-xl border border-muted bg-muted/10 hover:bg-muted/30 backdrop-blur-sm transition-all duration-200 cursor-pointer ${!shouldShowIcon ? 'min-h-[80px]' : ''}`}
                                         >
                                             {shouldShowIcon ? (
                                                 <>
-                                                    <StackIcon className="w-8 h-8 mb-1 drop-shadow-md" name={tech} />
+                                                    <Icon className="w-12 h-12 mb-1 drop-shadow-md" icon={tech} />
                                                     <span className="text-xs font-mono font-medium capitalize mt-1">
                                                         {techName}
                                                     </span>
+                                                    <div className='absolute -bottom-2 -right-2 -z-1 opacity-10'>
+                                                        <Icon className="w-18 h-18 mb-1 drop-shadow-md" icon={tech} />
+                                                    </div>
                                                 </>
                                             ) : (
                                                 <span className="text-xs font-mono font-medium">{techName}</span>

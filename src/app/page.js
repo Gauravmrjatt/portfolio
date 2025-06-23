@@ -1,25 +1,23 @@
 "use client"
 import NavBar from "@/components/magicui/NavBar";
-
+import TextAnimation from "@/components/TextAnimation";
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/magicui/dot-pattern";
 
-import TextAnimation from "@/components/TextAnimation";
-
+import { Icon } from "@iconify/react";
 import HeroSection from "./Hero";
 import TechStackSection from "./TechStack";
 import AboutMe from "./About";
 import Projects from "./Projects";
+import GetInTouch from "@/app/GetInTouch";
+import Footer from "./Footer";
+
 export default function Home() {
   return (
     <>
-
-      <div className="snap-y  overflow-hidden  h-screen snap-mandatory overflow-y-auto hide-scrollbar">
-
-
+      <div className="snap-y  overflow-hidden  h-screen snap-mandatory overflow-y-auto hide-scrollbar ">
         {/* main hero section */}
         <HeroSection />
-
         {/* stack  marquee */}
         <div className="border-t border-b snap-start bg-background">
           <marquee behavior="scrolling">
@@ -65,8 +63,11 @@ export default function Home() {
 
         {/* projects */}
         <Projects />
+        {/* contacts */}
+        <GetInTouch />
 
-        {/* <NavBar /> */}
+        {/* footer */}
+        <Footer />
       </div>
     </>
   );

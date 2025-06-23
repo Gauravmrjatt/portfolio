@@ -1,16 +1,17 @@
 'use client';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import StackIcon from "tech-stack-icons";
+import { Icon } from '@iconify/react';
+
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import TextAnimation from "@/components/TextAnimation";
+import { FlipText } from "@/components/magicui/flip-text";
 import { DotPattern } from '@/components/magicui/dot-pattern';
-
+import { AuroraBackground } from "@/components/ui/aurora-background";
 const projects = [
     {
         title: "Earning Area",
-        icon: "php",
+        icon: "logos:php",
         shortDescription: "A reward distribution platform that enables users to seamlessly distribute monetary rewards to a large community with minimal effort. It integrates with Paytm Payout API, Paytm Payment Gateway, and OpenMoney to handle transactions securely.",
         description: <p className="text-sm mb-4 text-sm">
             A reward distribution platform that enables users to seamlessly distribute monetary rewards to a large community with minimal effort. It integrates with Paytm Payout API, Paytm Payment Gateway, and OpenMoney to handle transactions securely.
@@ -20,12 +21,12 @@ const projects = [
         color: "#B33791",
         link: "https://earningarea.org/",
         duration: "Jan 2024 – Present",
-        techStack: ["html5", "css3", "js", "jquery", "php", "mysql", "nodejs", "mongodb", "redis", 'SOCKETIO', 'OPENMONEY-API', 'PAYTM-API', 'TELEGRAM-API', 'YOUTUBE-API'],
+        techStack: ["skill-icons:html", "skill-icons:css", "skill-icons:javascript", "skill-icons:jquery", "devicon:php", "logos:mysql", "skill-icons:nodejs-dark", "skill-icons:mongodb", "devicon:redis", 'logos:socket-io', 'OPENMONEY-API', 'simple-icons:paytm', 'logos:telegram', 'logos:youtube-icon'],
         repo: "https://github.com/yourusername/earning-area"
     },
     {
         title: "Dream10",
-        icon: "nextjs2",
+        icon: "devicon:nextjs",
         link: "https://dream10.in/",
         shortDescription: "A real-time, competitive quiz application that allows users to join live contests and answer questions simultaneously. The system ensures fairness by broadcasting each question to all participants at the exact same time, effectively preventing cheating or time-based",
         description: <p>
@@ -35,12 +36,12 @@ const projects = [
         </p>,
         color: "#0C359E",
         duration: "Sep 2023 – Dec 2023",
-        techStack: ["nodejs", "socketio", "redis", "mongodb", "nextjs2", "tailwindcss", "grafana", "rabbit-mq", "grafana", "prometheus", "loki", "coolify", "senatry", 'jwt', 'docker'],
+        techStack: ["logos:nodejs-icon", "logos:socket-io", "devicon:redis", "logos:mongodb-icon", "devicon:nextjs", "devicon:tailwindcss", "devicon:rabbitmq", "logos:grafana", "logos:prometheus", "loki", "coolify", "vscode-icons:file-type-sentry", 'logos:jwt-icon', 'logos:docker-icon'],
         repo: "https://github.com/yourusername/quiz-app"
     },
     {
         title: "Lead Tracking System",
-        icon: "nextjs2",
+        icon: "skill-icons:nextjs-dark",
         link: "https://panel3.logicpay.in/",
         shortDescription: " An invite-only affiliate marketing platform designed to track and manage leads with precision. The system includes built-in fraud detection mechanisms to ensure the authenticity of each lead and protect against abuse. It offers a detailed reporting dashboard where affiliates can monitor their performance, traffic sources, and conversion metrics in real time.",
         description: <p>
@@ -50,12 +51,12 @@ const projects = [
         </p>,
         color: "#69247C",
         duration: "Sep 2023 – Dec 2023",
-        techStack: ["nodejs", "redis", "mongodb", "nextjs2", "tailwindcss", "grafana", "bull-mq", "grafana", "prometheus", "loki", 'jwt', 'docker'],
+        techStack: ["logos:nodejs-icon", "devicon:redis", "logos:mongodb-icon", "devicon:nextjs", "devicon:tailwindcss", "logos:grafana", "bull-mq", "logos:prometheus", "loki", 'logos:jwt-icon', 'logos:docker-icon'],
         repo: "https://github.com/yourusername/quiz-app"
     },
     {
         title: "TOD-AI",
-        icon: "react",
+        icon: "material-icon-theme:react-ts",
         link: "https://tod-ai-teal.vercel.app/",
         shortDescription: "ToD-AI is a fun and interactive web-based ai designed to teach toddlers  through engaging visuals, playful animations, and clear audio pronunciation. Each game is introduced with colorful illustrations and sound cues that capture a child’s attention and reinforce learning through repetition and interaction. The game provides a safe, intuitive, and distraction-free environment, perfect for early learners exploring the alphabet for the first time.",
         description: <p>
@@ -64,12 +65,12 @@ const projects = [
             Built using Next.js, React, and Tailwind CSS, the platform ensures fast performance, responsive design, and a seamless user experience across devices. Its clean codebase and modular component structure also make it easy to maintain and expand—for example, by adding mini-games, multilingual support, or phonics modules in the future. This project combines education and technology to create a delightful and effective learning tool for toddlers. </p>,
         color: "#000D6B",
         duration: "Sep 2023 – Dec 2023",
-        techStack: ["nodejs", "mongodb", "nextjs2", "tailwindcss", 'jwt'],
+        techStack: ["logos:nodejs-icon", "logos:mongodb-icon", "devicon:nextjs", "devicon:tailwindcss", 'logos:jwt-icon'],
         repo: "https://github.com/yourusername/quiz-app"
     },
     {
         title: "Data Vault",
-        icon: "react",
+        icon: "skill-icons:react-dark",
         link: "https://datavault-two.vercel.app/",
         shortDescription: "Data Vault is a secure file-sharing platform that allows users to upload, store, and share files seamlessly with anyone on the platform. It provides a simple interface where users can manage their digital assets, organize them into categories, and share them with specific individuals or publicly through generated links. Designed for flexibility and ease of use, Data Vault ensures quick file access while maintaining user control over visibility and distribution.",
         description: <p>
@@ -79,14 +80,13 @@ const projects = [
         </p>,
         color: "#780C28",
         duration: "Sep 2023 – Dec 2023",
-        techStack: ["nodejs", "mongodb", "nextjs2", "tailwindcss", 'jwt', "TELEGRAM-API"],
+        techStack: ["logos:nodejs-icon", "logos:mongodb-icon", "devicon:nextjs", "devicon:tailwindcss", 'logos:jwt-icon', "TELEGRAM-API"],
         repo: "https://github.com/yourusername/quiz-app"
     }
 ];
 
 const UNSUPPORTED_ICONS = new Set([
-    'socketio', 'rest', 'jwt', 'dockercompose', 'nginx', 'ci', 'githubactions', 'stripe', 'razorpay', 'prometheus', 'loki', 'coolify', 'senatry', 'bugsink', 'SOCKETIO', 'OPENMONEY-API', 'PAYTM-API', 'TELEGRAM-API', 'YOUTUBE-API', "rabbit-mq", "bull-mq"
-]);
+    'coolify', 'ci/cd', 'loki', 'bugsink', 'OPENMONEY-API', 'bull-mq']);
 
 export default function Projects() {
     const [expandedIndex, setExpandedIndex] = useState(null);
@@ -96,10 +96,11 @@ export default function Projects() {
     };
 
     return (
-        <>
+        <div className='relative'>
             <div className='snap-start text-center bg-background border-t border-b p-5'>
-                <TextAnimation className='text-center'>Projects</TextAnimation>
+                <FlipText className='text-center text-4xl font-bold font-sans'>Projects</FlipText>
             </div>
+
             <div className='snap-start relative overflow-hidden'>
                 <VerticalTimeline>
                     {projects.map((project, index) => {
@@ -107,7 +108,6 @@ export default function Projects() {
                         const shortDescription = typeof project.shortDescription === 'string'
                             ? project.shortDescription.slice(0, 120) + "..."
                             : null;
-
                         return (
                             <VerticalTimelineElement
                                 key={index}
@@ -118,7 +118,7 @@ export default function Projects() {
                                 iconClassName="flex justify-center items-center"
                                 icon={
                                     <div className='flex justify-center items-center'>
-                                        <StackIcon name={project.icon} className='h-10 w-10 -mt-4 -ml-4' />
+                                        {/* <Icon width="960" height="960" icon={project.icon} /> */}
                                     </div>
                                 }
                             >
@@ -157,7 +157,7 @@ export default function Projects() {
                                             >
                                                 {UNSUPPORTED_ICONS.has(tech)
                                                     ? tech.toUpperCase()
-                                                    : <StackIcon name={tech} className="h-10 w-10" />}
+                                                    : <Icon icon={tech} className="h-10 w-10" />}
                                             </span>
                                         ))}
                                     </div>
@@ -190,7 +190,7 @@ export default function Projects() {
                         iconClassName="flex justify-center items-center"
                         icon={
                             <div className='flex justify-center items-center'>
-                                <StackIcon name="react" className='h-10 w-10 -mt-4 -ml-4' />
+                                <Icon icon="icon-park:protect" className='h-10 w-10 -mt-4 -ml-4' />
                             </div>
                         }
                     />
@@ -198,8 +198,9 @@ export default function Projects() {
 
                 <div className='fixed inset-0 -z-1'>
                     <DotPattern className="absolute inset-0 -z-10 opacity-20" />
+
                 </div>
             </div>
-        </>
+        </div>
     );
 }
