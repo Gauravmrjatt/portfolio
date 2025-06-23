@@ -50,18 +50,18 @@ Welcome to my personal portfolio repository! I'm Gaurav, a passionate full-stack
 
 ## 📈 Stats
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=your-username&layout=compact&theme=tokyonight)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=gauravmrjatt&layout=compact&theme=tokyonight)
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=your-username&show_icons=true&theme=tokyonight)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=gauravmrjatt&show_icons=true&theme=tokyonight)
 
 ---
 
 ## 📫 Contact Me
 
-- 📧 Email: your.email@example.com
-- 🌐 Portfolio: [your-portfolio-link.com](https://www.instagram.com/gauravmrjatt)
-- 💼 LinkedIn: [linkedin.com/in/your-profile](https://linkedin.com/in/gauravmrjatt)
-- 🐙 GitHub: [github.com/your-username](http://github.com/Gauravmrjatt/)
+- 📧 Email: gauravmrjatt4@gmail.com
+- 🌐 Portfolio: [gauravmrjatt.vercel.app/](https://gauravmrjatt.vercel.app/)
+- 💼 LinkedIn: [linkedin.com/in/gauravmrjatt](https://linkedin.com/in/gauravmrjatt)
+- 🐙 GitHub: [github.com/Gauravmrjatt/](https://github.com/Gauravmrjatt/)
 
 ---
 
