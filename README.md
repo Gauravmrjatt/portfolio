@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Gaurav's Developer Portfolio
 
-## Getting Started
+Welcome to my personal portfolio repository! I'm Gaurav, a passionate full-stack developer and engineering student with experience in building scalable web applications using modern technologies like **MERN**, **LAMP**, **Redis**, **Docker**, and more.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌐 Live Portfolio
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📍 [View My Portfolio](https://gauravmrjatt.vercel.app) 
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📌 About Me
 
-## Learn More
+- 👨‍💻 Engineering student passionate about full-stack development.
+- 🧠 Enjoy learning and building with JavaScript, PHP, React, Node.js, MySQL, MongoDB.
+- 🧰 Experienced in backend scaling, Redis caching, Dockerized development, and microservices.
+- 🎯 Goal: To build robust, scalable, and impactful software solutions.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Technologies & Tools
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Languages:
+`JavaScript` `PHP` `Java` `SQL` `HTML` `CSS` `Shell Script`
 
-## Deploy on Vercel
+### Frameworks & Libraries:
+`React.js` `Express.js` `Next.js` `Laravel` `Bootstrap` `Tailwind`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Databases:
+`MongoDB` `MySQL` `PostgreSQL` `Redis`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### DevOps & Tools:
+`Docker` `Git & GitHub` `Postman` `VS Code` `Nginx` `Firebase`
+
+---
+
+## 📂 Projects
+
+| Project | Tech Stack | Description |
+|--------|------------|-------------|
+| **Quiz Contest System** | MERN, Redis, WebSocket | Real-time quiz platform with scoring, leaderboard, and 10-second timer per question. |
+| **Payment Gateway API** | Node.js, PostgreSQL, Redis | Secure payment processing system with sub-account support, refund handling, and API key auth. |
+| **File Manager Bot** | Node.js, Telegram API, MongoDB | Upload/download files via Telegram, track user files, and manage sessions. |
+| **Mentoring Platform** | Next.js, MongoDB, Express | Book sessions with mentors, calendar integration, and video/chat features. |
+
+> Explore the full list in the [projects](./projects) folder.
+
+---
+
+## 📈 Stats
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=your-username&layout=compact&theme=tokyonight)
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=your-username&show_icons=true&theme=tokyonight)
+
+---
+
+## 📫 Contact Me
+
+- 📧 Email: your.email@example.com
+- 🌐 Portfolio: [your-portfolio-link.com](https://www.instagram.com/gauravmrjatt)
+- 💼 LinkedIn: [linkedin.com/in/your-profile](https://linkedin.com/in/gauravmrjatt)
+- 🐙 GitHub: [github.com/your-username](http://github.com/Gauravmrjatt/)
+
+---
+
+## 📝 License
+
+This portfolio is open-source and available under the [MIT License](LICENSE).
+
