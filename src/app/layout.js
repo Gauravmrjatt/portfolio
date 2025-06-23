@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/app/theme-provider"
 import ThemeSwitch from "@/app/ThemeSwitch";
+import { Analytics } from "@vercel/analytics/next"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,7 +35,7 @@ export default function RootLayout({ children }) {
           <div className="fixed top-5 right-5 z-50">
             <ThemeSwitch />
           </div>
-
+          <Analytics />
           {children}
         </ThemeProvider>
 
