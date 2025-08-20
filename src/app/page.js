@@ -7,11 +7,21 @@ import AboutMe from "./About";
 import Projects from "./Projects";
 import GetInTouch from "@/app/GetInTouch";
 import Footer from "./Footer";
+import BlackRevealMask from '@/components/RevealOnLoad';
 
 export default function Home() {
   return (
     <>
       <div className="snap-y  overflow-hidden  h-screen snap-mandatory overflow-y-auto hide-scrollbar ">
+        <BlackRevealMask
+          holdBlackMs={100}       // hold full black for 300ms
+          delayMs={100}           // wait 100ms then start expanding
+          durationMs={2000}       // expand over 1s
+          background=""       // set overlay color
+          origin={{ x: '50%', y: '50%' }} // e.g., { x: '80%', y: '20%' }
+          zIndex={9999}
+          showDot={false}
+        />
         {/* main hero section */}
         <LazySection>
           <HeroSection />
