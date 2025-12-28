@@ -5,7 +5,8 @@ import { Icon } from "@iconify/react";
 import { cn } from "@/lib/utils";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
-
+import MonochromeBackground from "@/components/MonochromeBackground";
+import { useTheme } from "next-themes";
 const BentoGrid = ({ children, isMobile }) => {
   if (isMobile) {
     return <div className="w-full">{children}</div>;
@@ -36,6 +37,8 @@ const BentoCard = ({
     "paytm",
   ]);
 
+  const { theme } = useTheme();
+
   return (
     <div
       className={cn(
@@ -46,6 +49,7 @@ const BentoCard = ({
         className
       )}
     >
+      <MonochromeBackground theme={theme} />
       <div className={cn("absolute inset-0 opacity-40", backgroundClass)} />
 
       <div className="relative z-10 flex flex-col h-full p-7 md:p-9">
@@ -221,7 +225,7 @@ export default function Projects() {
   const [isMobile, setIsMobile] = useState(false);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
   const [selectedIndex, setSelectedIndex] = useState(0);
-
+ 
   const scrollTo = useCallback((index) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
 
   useEffect(() => {
@@ -240,7 +244,7 @@ export default function Projects() {
   }, [emblaApi]);
 
   return (
-    <section className="py-20 md:py-32 bg-background relative">
+    <section id="projects" className="py-20 md:py-32 bg-background relative">
       <div className="text-center mb-16 md:mb-20">
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-60">My Projects</h1>
       </div>

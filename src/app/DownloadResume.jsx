@@ -10,7 +10,7 @@ export default function DownloadResume() {
   // const resumeUrl = "https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing";
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-background to-background/80">
+    <section id="contact" className="py-16 md:py-24 bg-gradient-to-b from-background to-background/80">
       <div className="container mx-auto px-6 max-w-5xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,10 +18,10 @@ export default function DownloadResume() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
-            Ready to Work Together?
-          </h2>
-
+  <h1 className="text-5xl md:text-7xl font-bold text-center mb-20 tracking-tight">
+         Ready to Work Together?
+        </h1>
+        
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
             Download my resume to learn more about my skills, projects, and experience.
           </p>
@@ -65,7 +65,7 @@ export default function DownloadResume() {
           </div>
 
           {/* Optional small note */}
-          <p className="mt-6 text-sm text-muted-foreground">
+          <p  className="mt-6 text-sm text-muted-foreground">
             Last updated: December 2025
           </p>
         </motion.div>

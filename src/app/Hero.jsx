@@ -11,7 +11,7 @@ export default function Hero() {
     const { theme } = useTheme()
     return (<>
         {/* <ParallaxScroll> */}
-            <div className="relative flex min-h-dvh bg-background flex-col md:flex-col snap-start">
+            <div id="home" className="relative flex min-h-dvh bg-background flex-col md:flex-col snap-start z-[50]">
 
                 {/* TEXT — CENTERED (shifted slightly left on desktop) */}
                 {/* <ParallaxLayer className="mt-20 z-200" speed={0.3} offset={1}> */}

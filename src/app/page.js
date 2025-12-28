@@ -10,15 +10,16 @@ import Footer from "./Footer";
 import EducationTimeline from "./Education";
 import Achievements from "./Achievements";
 import DownloadResume from "./DownloadResume";
+import Dock from "./DockBar";
 export default function Home() {
   return (
     <>
       <div className="overflow-y-auto hide-scrollbar">
-        
+        <div id="home-sentinel" className="h-96 hidden" /> {/* or any height */}
           <HeroSection />
         {/* stack  marquee */}
         <LazySection>
-          <div className="border-t border-b snap-start bg-background">
+          <div className="border-t border-b snap-start bg-background z-[50]">
             <marquee behavior="scrolling">
               <div className="flex p-3">
                 <TextAnimation>
@@ -93,6 +94,7 @@ export default function Home() {
         <LazySection>
           <Footer />
         </LazySection>
+        <Dock />
       </div>
     </>
   );

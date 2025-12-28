@@ -97,7 +97,7 @@ const AchievementCard = ({ achievement }) => {
 
 export default function Achievements() {
     return (
-        <section className="py-20 md:py-32 bg-background min-h-[100vh]">
+        <section id="achievements" className="py-20 md:py-32 bg-background min-h-[100vh]">
             <div className="container mx-auto px-6 max-w-7xl">
 
                 <div className="text-center mb-16 md:mb-20">

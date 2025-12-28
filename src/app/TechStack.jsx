@@ -109,7 +109,7 @@ const techFolders = [
 export default function TechStackFolders() {
   return (
     
-    <main className="min-h-screen bg-background flex flex-col items-center justify-center px-6 py-16 pb-30">
+    <main id="skills" className="min-h-screen bg-background flex flex-col items-center justify-center px-6 py-16 pb-30">
       <div className="max-w-7xl mx-auto w-full">
         <h1 className="text-5xl md:text-7xl font-bold text-center mb-20 tracking-tight">
           My Tech Stack
