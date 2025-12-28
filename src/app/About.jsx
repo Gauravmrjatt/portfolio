@@ -39,7 +39,7 @@ export default function AboutMe() {
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,_var(--secondary)_8%,_transparent_50%)]" />
                     </div>
                 </div>
-                <ParallaxLayer speed={0.1} offset={2}>
+                {/* <ParallaxLayer speed={0.1} offset={2}> */}
                     <div className="container mx-auto px-6">
 
                         <div className="grid lg:grid-cols-2 gap-16 lg:gap-28 items-center max-w-7xl mx-auto">
@@ -172,7 +172,7 @@ export default function AboutMe() {
                         </div>
 
                     </div>
-                </ParallaxLayer>
+                {/* </ParallaxLayer> */}
                 {/* <MonochromeBackground theme={theme} /> */}
             </section>
         // </ParallaxScroll>

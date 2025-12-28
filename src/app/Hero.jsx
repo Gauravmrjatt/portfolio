@@ -10,11 +10,11 @@ import MonochromeBackground from "@/components/MonochromeBackground";
 export default function Hero() {
     const { theme } = useTheme()
     return (<>
-        <ParallaxScroll>
+        {/* <ParallaxScroll> */}
             <div className="relative flex min-h-dvh bg-background flex-col md:flex-col snap-start">
 
                 {/* TEXT — CENTERED (shifted slightly left on desktop) */}
-                <ParallaxLayer className="mt-20 z-200" speed={0.3} offset={1}>
+                {/* <ParallaxLayer className="mt-20 z-200" speed={0.3} offset={1}> */}
                     <div
                         className="
         flex 
@@ -95,8 +95,8 @@ export default function Hero() {
             "
                         />
                     </div>
-                </ParallaxLayer>
-                <ParallaxLayer className="z-[0]" speed={0} offset={0.2}>
+                {/* </ParallaxLayer> */}
+                {/* <ParallaxLayer className="z-[0]" speed={0} offset={0.2}> */}
                     {/* BOTTOM GLOW */}
                     <div className="absolute bg-background z-10 bottom-0 -mt-32 h-[20vh] w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)]">
                         <div className="absolute inset-0 before:absolute  before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#8350e8,transparent_70%)] before:opacity-40" />
@@ -107,9 +107,9 @@ export default function Hero() {
                             color={theme === "dark" ? "#ffffff" : "#000000"}
                         />
                     </div>
-                </ParallaxLayer>
+                {/* </ParallaxLayer> */}
             </div>
-        </ParallaxScroll>
+        {/* </ParallaxScroll> */}
 
 
     </>);
