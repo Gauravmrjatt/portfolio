@@ -123,7 +123,7 @@ export default function TechStackFolders() {
             <div
               key={folder.title}
               className={cn(
-                "relative backdrop-blur-xl",
+                "relative",
                 // Odd indices (1st, 3rd, 5th, etc.) move down for zigzag effect
                 index % 2 === 1 && "top-16 md:top-24"
               )}
@@ -206,6 +206,7 @@ export function AnimatedFolder({ title, projects, className }) {
           {/* Tech cards */}
           <div className="absolute inset-0 flex items-center justify-center z-20">
             {projects.slice(0, 3).map((project, index) => (
+            
               <TechCard
                 key={project.id}
                 ref={el => (cardRefs.current[index] = el)}
@@ -217,6 +218,7 @@ export function AnimatedFolder({ title, projects, className }) {
                 onClick={() => handleProjectClick(project, index)}
                 isSelected={hiddenCardId === project.id}
               />
+          
             ))}
           </div>
 
@@ -266,11 +268,12 @@ const TechCard = forwardRef(({ icon, title, delay, isVisible, index, onClick, is
       }}
       onClick={e => { e.stopPropagation(); onClick() }}
     >
-      <div className="w-full h-full flex items-center justify-center p-8 bg-gradient-to-br from-card to-card/50">
+      <div className="w-full h-full flex items-center justify-center -mt-5 p-8 bg-gradient-to-br from-card to-card/50">
         {icon}
       </div>
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
-        <p className="text-xs font-semibold text-white text-center truncate">{title}</p>
+        <p className="text-xs font-semibold text-white text-center  truncate">{title}</p>
+        <p className="text-xs bg-muted p-1 border border-border rounded-full mt-2 font-semibold text-muted-foreground text-center truncate ">View all</p>
       </div>
     </div>
   )
