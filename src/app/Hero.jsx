@@ -69,7 +69,7 @@ export default function Hero() {
                     <div
                         className="
         absolute 
-        -bottom-25
+        -bottom-0
         right-0 
         w-full 
         h-[40dvh] 
