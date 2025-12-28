@@ -11,15 +11,12 @@ import EducationTimeline from "./Education";
 import Achievements from "./Achievements";
 import DownloadResume from "./DownloadResume";
 export default function Home() {
-    return (
-        <>
-            <div className="overflow-y-auto hide-scrollbar">
-                   <LazySection>
+  return (
+    <>
+      <div className="overflow-y-auto hide-scrollbar">
+        
           <HeroSection />
-        </LazySection>
         {/* stack  marquee */}
-
-       
         <LazySection>
           <div className="border-t border-b snap-start bg-background">
             <marquee behavior="scrolling">
@@ -57,44 +54,46 @@ export default function Home() {
             </marquee>
           </div>
         </LazySection>
-  
+
         {/* about me */}
         <LazySection>
           <AboutMe />
         </LazySection>
-                {/* tech and skills - vertical to horizontal scroll */}
-                <TechStackSection />
 
-                {/* projects */}
-                <LazySection>
-                    <Projects />
-                </LazySection>
+        {/* tech and skills - vertical to horizontal scroll */}
+        <LazySection>
+          <TechStackSection />
+        </LazySection>
+        {/* projects */}
+        <LazySection>
+          <Projects />
+        </LazySection>
 
-                {/* education */}
-                <LazySection>
-                    <EducationTimeline />
-                </LazySection>
-                
-                {/* achievements */}
-                <LazySection>
-                    <Achievements />
-                </LazySection>
+        {/* education */}
+        <LazySection>
+          <EducationTimeline />
+        </LazySection>
 
-                {/* download resume */}
-                <LazySection>
-                    <DownloadResume />
-                </LazySection>
-                {/* contacts */}
-                <LazySection>
-                    <GetInTouch />
-                </LazySection>
+        {/* achievements */}
+        <LazySection>
+          <Achievements />
+        </LazySection>
+
+        {/* download resume */}
+        <LazySection>
+          <DownloadResume />
+        </LazySection>
+        {/* contacts */}
+        <LazySection>
+          <GetInTouch />
+        </LazySection>
 
 
-                {/* footer */}
-                <LazySection>
-                    <Footer />
-                </LazySection>
-            </div>
-        </>
-    );
+        {/* footer */}
+        <LazySection>
+          <Footer />
+        </LazySection>
+      </div>
+    </>
+  );
 }
