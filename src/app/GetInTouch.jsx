@@ -3,9 +3,12 @@
 import { motion } from "motion/react";
 import React, { useState } from "react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import MonochromeBackground from "@/components/MonochromeBackground";
+import { useTheme } from "next-themes";
 import { Icon } from "@iconify/react";
 import items from "./items"
 export default function GetInTouch() {
+    const { theme } = useTheme()
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -27,11 +30,15 @@ export default function GetInTouch() {
     };
 
     return (
-        <div className="relative overflow-hiddden snap-start ">
-            <AuroraBackground className="absolute h-[100%] -z-1 inset-0" />
-            <div className="font-sans min-h-[100vh] pb-7 md:flex  justify-center items-center">
-                <div className="grid md:grid-cols-2 items-start gap-12 p-8 mx-auto max-w-4xl max-lg:max-w-2xl  bg-background/50 backdrop-blur-2xl rounded-md">
-                    <div>
+        <div className="relative overflow-hiddden snap-start rounded-2xl">
+            {/* <AuroraBackground className="absolute h-[100%] -z-1 inset-0" /> */}
+
+            <div className="font-sans min-h-[100vh] pb-7 md:flex rounded-2xl justify-center items-center relative">
+
+                <div className="grid md:grid-cols-2 items-start gap-12 p-8 mx-auto max-w-4xl max-lg:max-w-2xl  bg-background/50 backdrop-blur-2xl rounded-2xl">
+                    <MonochromeBackground theme={theme} />
+                    <div className="relative">
+
                         <h2 className="text-3xl text-primary font-bold">Let's Talk</h2>
                         <p className="text-[15px] text-muted-foreground mt-4 leading-relaxed">Have some big idea or brand to develop and need help? Then reach out we'd love to hear about your project  and provide help.</p>
                         <div className="mt-12">
@@ -62,7 +69,7 @@ export default function GetInTouch() {
                         </div>
                     </div>
 
-                    <form action="https://formsubmit.co/gauravmrjatt4@gmail.com" method="POST" className="space-y-4">
+                    <form action="https://formsubmit.co/gauravmrjatt4@gmail.com" method="POST" className="space-y-4 z-10">
                         <input type='text' placeholder='Name'
                             className="w-full text-primary rounded-md py-2.5 px-4 border placeholder-gray-500 dark:placeholder-gray-40  text-sm " />
                         <input type='email' placeholder='Email'

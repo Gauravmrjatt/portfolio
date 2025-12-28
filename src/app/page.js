@@ -7,27 +7,19 @@ import AboutMe from "./About";
 import Projects from "./Projects";
 import GetInTouch from "@/app/GetInTouch";
 import Footer from "./Footer";
-import BlackRevealMask from '@/components/RevealOnLoad';
-
+import EducationTimeline from "./Education";
+import Achievements from "./Achievements";
+import DownloadResume from "./DownloadResume";
 export default function Home() {
-  return (
-    <>
-      <div className="snap-y  overflow-hidden  h-screen snap-mandatory overflow-y-auto hide-scrollbar ">
-        <BlackRevealMask
-          holdBlackMs={100}       // hold full black for 300ms
-          delayMs={100}           // wait 100ms then start expanding
-          durationMs={2000}       // expand over 1s
-          background=""       // set overlay color
-          origin={{ x: '50%', y: '50%' }} // e.g., { x: '80%', y: '20%' }
-          zIndex={9999}
-          showDot={false}
-        />
-        {/* main hero section */}
-        <LazySection>
+    return (
+        <>
+            <div className="overflow-y-auto hide-scrollbar">
+                   <LazySection>
           <HeroSection />
         </LazySection>
         {/* stack  marquee */}
 
+       
         <LazySection>
           <div className="border-t border-b snap-start bg-background">
             <marquee behavior="scrolling">
@@ -65,31 +57,44 @@ export default function Home() {
             </marquee>
           </div>
         </LazySection>
-
+  
         {/* about me */}
         <LazySection>
           <AboutMe />
         </LazySection>
+                {/* tech and skills - vertical to horizontal scroll */}
+                <TechStackSection />
 
-        {/* tech and skills */}
-        <LazySection>
-          <TechStackSection />
-        </LazySection>
+                {/* projects */}
+                <LazySection>
+                    <Projects />
+                </LazySection>
 
-        {/* projects */}
-        <LazySection>
-          <Projects />
-        </LazySection>
-        {/* contacts */}
-        <LazySection>
-          <GetInTouch />
-        </LazySection>
+                {/* education */}
+                <LazySection>
+                    <EducationTimeline />
+                </LazySection>
+                
+                {/* achievements */}
+                <LazySection>
+                    <Achievements />
+                </LazySection>
 
-        {/* footer */}
-        <LazySection>
-          <Footer />
-        </LazySection>
-      </div>
-    </>
-  );
+                {/* download resume */}
+                <LazySection>
+                    <DownloadResume />
+                </LazySection>
+                {/* contacts */}
+                <LazySection>
+                    <GetInTouch />
+                </LazySection>
+
+
+                {/* footer */}
+                <LazySection>
+                    <Footer />
+                </LazySection>
+            </div>
+        </>
+    );
 }
