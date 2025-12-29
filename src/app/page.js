@@ -86,9 +86,10 @@ export default function Home() {
           <DownloadResume />
         </LazySection>
         {/* contacts */}
-        <LazySection>
+        
+        {/* <LazySection>
           <GetInTouch />
-        </LazySection>
+        </LazySection> */}
 
 
         {/* footer */}

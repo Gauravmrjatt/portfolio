@@ -1,89 +1,83 @@
 "use client";
 
-import { motion } from "motion/react";
+import { Download, FileText } from "lucide-react";
 import React, { useState } from "react";
-import { AuroraBackground } from "@/components/ui/aurora-background";
-import MonochromeBackground from "@/components/MonochromeBackground";
 import { useTheme } from "next-themes";
-import { Icon } from "@iconify/react";
-import items from "./items"
+import { cn } from "@/lib/utils";
+import MonochromeBackground from "@/components/MonochromeBackground";
+import items from "./items";
+
+const resumeUrl = "/resume.pdf";
+
 export default function GetInTouch() {
-    const { theme } = useTheme()
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: ""
-    });
+  const { theme } = useTheme();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission here
-        console.log(formData);
-    };
+  return (
+   <section
+  id="contact"
+  className="relative rounded-xl border border-gray-100 bg-gradient-to-t from-neutral-100 to-white inset-shadow-sm inset-shadow-black/2 dark:border-zinc-900 dark:from-zinc-900 dark:to-zinc-800 dark:inset-shadow-white/7 p-6 md:p-8 hover:border-primary/50 transition-colors shadow-lg hover:shadow-2xl "
+>
+  {/* Background */}
+  {/* <div className="absolute rounded-xl inset-0 -z-10">
+    <MonochromeBackground theme={theme} />
+  </div> */}
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
-    };
+  {/* Card */}
+  <div className="mx-auto rounded-xl ">
+    <div className="grid gap-8 p-8 md:grid-cols-2">
 
-    return (
-        <section id="contact" className="relative overflow-hiddden snap-start rounded-2xl">
-            {/* <AuroraBackground className="absolute h-[100%] -z-1 inset-0" /> */}
+      {/* LEFT: 2x2 ICON GRID */}
+      <div className="grid grid-cols-2 grid-rows-2 gap-4 place-items-center">
+        {items.slice(0, 4).map((item, index) => (
+          <a
+            key={index}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex h-16 w-16 items-center justify-center rounded-full bg-muted/70 transition-all hover:scale-110 hover:bg-muted"
+          >
+            {item.icon}
+          </a>
+        ))}
+      </div>
 
-            <div className="font-sans min-h-[100vh] pb-7 md:flex rounded-2xl justify-center items-center relative">
+      {/* RIGHT: 2x1 BUTTON GRID */}
+      <div className="grid grid-rows-2 gap-6">
+        <a
+          href={resumeUrl}
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(
+            "flex items-center justify-center gap-3",
+            "rounded-xl px-6 py-4 font-semibold",
+            "bg-primary text-primary-foreground",
+            "shadow-md transition-all hover:-translate-y-0.5 hover:shadow-xl"
+          )}
+        >
+          <Download className="h-5 w-5" />
+           Resume
+        </a>
 
-                <div className="grid md:grid-cols-2 items-start gap-12 p-8 mx-auto max-w-4xl max-lg:max-w-2xl  bg-background/50 backdrop-blur-2xl rounded-2xl">
-                    <MonochromeBackground theme={theme} />
-                    <div className="relative">
+        <a
+          href={resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(
+            "flex items-center justify-center gap-3",
+            "rounded-xl px-6 py-4 font-medium",
+            "bg-muted text-foreground",
+            "border border-border/60 transition-colors hover:bg-muted/80"
+          )}
+        >
+          <FileText className="h-5 w-5" />
+          View
+        </a>
+      </div>
 
-                        <h2 className="text-3xl text-primary font-bold">Let's Talk</h2>
-                        <p className="text-[15px] text-muted-foreground mt-4 leading-relaxed">Have some big idea or brand to develop and need help? Then reach out we'd love to hear about your project  and provide help.</p>
-                        <div className="mt-12">
-                            <h2 className="text-primary text-base font-semibold">Email</h2>
-                            <ul className="mt-4">
-                                <li className="flex items-center">
-                                    <div className="bg-muted/70 text-primary h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                                        <Icon height="24" width="24" icon="line-md:email-alt-twotone" />
-                                    </div>
-                                    <a href="mailto:Gauravmrjatt4@gmail.com" target="_blank" className="text-sm ml-4">
-                                        <small className="block text-muted-foreground">Mail</small>
-                                        <span className="text-blue-600 font-medium">Gauravmrjatt4@gmail.com</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+    </div>
+  </div>
+</section>
 
-                        <div className="mt-12">
-                            <h2 className="text-primary text-base font-semibold">Socials</h2>
-                            <ul className="flex mt-4 space-x-4">
-                                {items.map((item, index) =>
-                                    <li key={index} className="bg-muted/70 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                                        <a target="_blank" href={item.href}>
-                                            {item.icon}
-                                        </a>
-                                    </li>)}
-                            </ul>
-                        </div>
-                    </div>
-
-                    <form action="https://formsubmit.co/gauravmrjatt4@gmail.com" method="POST" className="space-y-4 z-10">
-                        <input type='text' placeholder='Name'
-                            className="w-full text-primary rounded-md py-2.5 px-4 border placeholder-gray-500 dark:placeholder-gray-40  text-sm " />
-                        <input type='email' placeholder='Email'
-                            className="w-full text-primary rounded-md py-2.5 px-4 border placeholder-gray-500 dark:placeholder-gray-40  text-sm " />
-                        <input type='text' placeholder='Subject'
-                            className="w-full text-primary rounded-md py-2.5 px-4 border placeholder-gray-500 dark:placeholder-gray-40  text-sm " />
-                        <textarea placeholder='Message' rows="6"
-                            className="w-full text-primary rounded-md px-4 border placeholder-gray-500 dark:placeholder-gray-40 text-sm pt-2.5 "></textarea>
-                        <button type='button'
-                            className="text-white bg-blue-600 hover:bg-blue-700 rounded-md text-sm font-medium px-4 py-2.5 w-full cursor-pointer border-0 mt-2">Send message</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-    );
+  );
 }

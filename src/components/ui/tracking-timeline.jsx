@@ -81,8 +81,7 @@ const TrackingTimeline = ({ items, className }) => {
           <div className="flex-1 pt-1 md:pt-2">
             <div
               className={cn(
-                "rounded-xl border bg-gradient-to-br from-white to-black/10 dark:from-white/10 dark:to-transparent p-5 md:p-6 shadow-sm backdrop-blur-sm transition-all hover:shadow-lg",
-                "border-border/50",
+                "rounded-xl border p-6 border-gray-100 bg-gradient-to-t from-neutral-100 to-white inset-shadow-sm inset-shadow-black/2 dark:border-zinc-900 dark:from-zinc-900 dark:to-zinc-800 dark:inset-shadow-white/7 hover:shadow-lg",
                 { "ring-2 ring-primary/30": item.status === "in-progress" }
               )}
             >
