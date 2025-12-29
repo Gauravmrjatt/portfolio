@@ -272,11 +272,12 @@ export default function Achievements() {
     <section id="achievements" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-16 md:mb-20">
-          <h1 className="text-5xl md:text-7xl font-light tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
             Achievements & Certifications
           </h1>
         </div>
-
+        
+  
         {/* Your original CardStack with responsive resizing */}
         <CardStack
           cards={achievements}

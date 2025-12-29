@@ -12,7 +12,7 @@ export default function Hero() {
         {/* <ParallaxScroll> */}
         <section id="home" className="relative overflow-hidden flex min-h-dvh bg-background flex-col md:flex-col snap-start z-[50]">
 
-            <div className="relative flex items-center scale-650 opacity-30 justify-center">
+            <div className="relative flex items-center scale-650 opacity-70 justify-center">
                 <div className="absolute -z-10">
                     <Glow x={-40} y={-30} color="rgba(227,148,0,0.25)" />
                     <Glow x={40} y={-20} color="rgba(0,151,254,0.25)" />
