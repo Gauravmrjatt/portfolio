@@ -33,9 +33,7 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          <div className="fixed top-5 right-5 z-50">
-            <ThemeSwitch />
-          </div>
+      
           <Analytics />
           {children}
         </ThemeProvider>

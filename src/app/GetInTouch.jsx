@@ -30,7 +30,7 @@ export default function GetInTouch() {
     };
 
     return (
-        <div className="relative overflow-hiddden snap-start rounded-2xl">
+        <section id="contact" className="relative overflow-hiddden snap-start rounded-2xl">
             {/* <AuroraBackground className="absolute h-[100%] -z-1 inset-0" /> */}
 
             <div className="font-sans min-h-[100vh] pb-7 md:flex rounded-2xl justify-center items-center relative">
@@ -83,7 +83,7 @@ export default function GetInTouch() {
                     </form>
                 </div>
             </div>
-        </div>
+        </section>
 
     );
 }

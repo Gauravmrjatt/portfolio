@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 import { Icon } from "@iconify/react"
 import { forwardRef } from "react"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
-import ParallaxScroll,{  ParallaxLayer, ParallaxHeroExample } from "@/components/ParallaxScroll";
+import ParallaxScroll, { ParallaxLayer, ParallaxHeroExample } from "@/components/ParallaxScroll";
 // All your categories fully integrated
 const techFolders = [
   {
@@ -108,18 +108,18 @@ const techFolders = [
 
 export default function TechStackFolders() {
   return (
-    
-    <main id="skills" className="min-h-screen bg-background flex flex-col items-center justify-center px-6 py-16 pb-30">
+
+    <section id="skills" className="min-h-screen bg-background flex flex-col items-center justify-center px-6 py-16 pb-30">
       <div className="max-w-7xl mx-auto w-full">
         <h1 className="text-5xl md:text-7xl font-bold text-center mb-20 tracking-tight">
           My Tech Stack
         </h1>
-        
-{/* <ParallaxHeroExample /> */}
+
+        {/* <ParallaxHeroExample /> */}
         {/* Zigzag / Staggered Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-10 gap-y-32 md:gap-y-40">
           {techFolders.map((folder, index) => (
-            
+
             <div
               key={folder.title}
               className={cn(
@@ -128,7 +128,7 @@ export default function TechStackFolders() {
                 index % 2 === 1 && "top-16 md:top-24"
               )}
             >
-         
+
               <AnimatedFolder
                 title={folder.title}
                 projects={folder.techs.map(tech => ({
@@ -138,12 +138,12 @@ export default function TechStackFolders() {
                   fullIcon: tech.icon
                 }))}
               />
-             
+
             </div>
           ))}
         </div>
       </div>
-    </main>
+    </section>
 
   )
 }
@@ -206,7 +206,7 @@ export function AnimatedFolder({ title, projects, className }) {
           {/* Tech cards */}
           <div className="absolute inset-0 flex items-center justify-center z-20">
             {projects.slice(0, 3).map((project, index) => (
-            
+
               <TechCard
                 key={project.id}
                 ref={el => (cardRefs.current[index] = el)}
@@ -218,7 +218,7 @@ export function AnimatedFolder({ title, projects, className }) {
                 onClick={() => handleProjectClick(project, index)}
                 isSelected={hiddenCardId === project.id}
               />
-          
+
             ))}
           </div>
 

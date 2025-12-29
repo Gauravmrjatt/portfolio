@@ -11,12 +11,13 @@ import EducationTimeline from "./Education";
 import Achievements from "./Achievements";
 import DownloadResume from "./DownloadResume";
 import Dock from "./DockBar";
+import { ScrollSpy , ActiveSectionProvider} from '@/components/Dock';
 export default function Home() {
   return (
-    <>
+    <ActiveSectionProvider>
       <div className="overflow-y-auto hide-scrollbar">
-        <div id="home-sentinel" className="h-96 hidden" /> {/* or any height */}
-          <HeroSection />
+        <ScrollSpy />
+        <HeroSection />
         {/* stack  marquee */}
         <LazySection>
           <div className="border-t border-b snap-start bg-background z-[50]">
@@ -96,6 +97,6 @@ export default function Home() {
         </LazySection>
         <Dock />
       </div>
-    </>
+    </ActiveSectionProvider>
   );
 }
