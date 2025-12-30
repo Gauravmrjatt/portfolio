@@ -6,22 +6,15 @@ import items from "./items"
 import { Sparkles } from "@/components/Aurora/sparkles";
 import { useTheme } from "next-themes";
 import Glow from "@/components/Glow";
+import { HeroPill, StarIcon } from "@/components/HeroPill"
+
 export default function Hero() {
     const { theme } = useTheme()
     return (<>
         {/* <ParallaxScroll> */}
-        <section id="home" className="relative overflow-hidden flex min-h-dvh bg-background flex-col md:flex-col snap-start z-[50]">
+        <section id="home" className="relative overflow-hidden flex min-h-dvh bg-background flex-col md:flex-col snap-start z-[50] ">
 
-            <div className="relative flex items-center scale-650 opacity-70 justify-center">
-                <div className="absolute -z-10">
-                    <Glow x={-40} y={-30} color="rgba(227,148,0,0.25)" />
-                    <Glow x={40} y={-20} color="rgba(0,151,254,0.25)" />
-                    <Glow x={55} y={20} color="rgba(0,173,9,0.25)" />
-                    <Glow x={0} y={55} color="rgba(243,71,255,0.25)" />
-                    <Glow x={-55} y={20} color="rgba(153,102,255,0.25)" />
-                    <Glow x={-35} y={-5} color="rgba(255,71,71,0.25)" />
-                </div>
-            </div>
+
             {/* TEXT — CENTERED (shifted slightly left on desktop) */}
             <div
                 className="
@@ -40,14 +33,26 @@ export default function Hero() {
         relative
         
     ">
-
+                <div className="relative flex items-center scale-150 md:scale-300 opacity-30  justify-center">
+                    <div className="absolute md:left-20 top-30 translate-x-1/2 -translate-y-1/2 -z-10">
+                        <Glow x={-40} y={-30} color="rgba(227,148,0,0.25)" />
+                        <Glow x={40} y={-20} color="rgba(0,151,254,0.25)" />
+                        <Glow x={55} y={20} color="rgba(0,173,9,0.25)" />
+                        <Glow x={0} y={55} color="rgba(243,71,255,0.25)" />
+                        <Glow x={-55} y={20} color="rgba(153,102,255,0.25)" />
+                        <Glow x={-35} y={-5} color="rgba(255,71,71,0.25)" />
+                    </div>
+                </div>
                 <span className="font-mono mb-4">
-                    <TextAnimate animation="slideLeft" by="character">
-                        FULL-STACK DEVELOPER
-                    </TextAnimate>
+                    {/* <TextAnimate animation="slideLeft" by="character"> */}
+                        <HeroPill
+                            icon={<StarIcon />}
+                            text="Full Stack Developer"
+                        />
+                    {/* </TextAnimate> */}
                 </span>
 
-                <h1 className="dancing md:text-9xl mt-4 text-6xl">
+                <h1 className="dancing md:text-9xl mt-4  text-6xl">
                     <TextAnimate
                         by="character"
                         className="font-medium dancing font-dancing dancing md:text-9xl text-6xl">

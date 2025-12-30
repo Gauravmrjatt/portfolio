@@ -1,174 +1,194 @@
-"use client"
+'use client';
 
-import { cn } from "@/lib/utils"
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import ParallaxScroll, { ParallaxLayer, ParallaxHeroExample } from "@/components/ParallaxScroll";
-import MonochromeBackground from "@/components/MonochromeBackground";
-import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Github, Gitlab, MapPin } from "lucide-react";
+import Glow from "@/components/Glow";
+const stats = [
+    { value: "2+", label: "Years Experience" },
+    { value: "3+", label: "Internships" },
+    { value: "5+", label: "Projects" },
+];
+
 const skills = [
     "MERN Stack",
     "LAMP Stack",
     "Next.js",
     "Docker",
-]
+    "PostgreSQL",
+    "Redis",
+    "TypeScript",
+    "Tailwind CSS",
+];
+
+const container = {
+    hidden: {},
+    show: {
+        transition: {
+            staggerChildren: 0.12,
+            delayChildren: 0.15,
+        },
+    },
+};
+
+const card = {
+    hidden: { opacity: 0, y: 24, scale: 0.97 },
+    show: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: { duration: 0.5, ease: "easeOut" },
+    },
+};
 
 export default function AboutMe() {
-    const { theme } = useTheme();
     const [ref, inView] = useInView({
-        threshold: 0.15,
+        threshold: 0.1,
         triggerOnce: true,
-    })
+    });
 
     return (
-        // <ParallaxScroll>
-        <>
-          <div className="text-center mt-20 mb-50 md:-mb-10">
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tight">About me</h1>
-            </div>
         <section
-            ref={ref}
-            className="overflow-hidden bg-background min-h-screen flex items-center "
+            id="about"
+            className="relative min-h-screen bg-background/50 px-4 py-20 overflow-x-hidden flex justify-center items-center"
         >
-          
+            {/* Background Glow */}
+            <div className="
+  fixed 
+  top-1/2 left-1/2 
+  -translate-x-1/2 -translate-y-1/2 
+  scale-[3]
+  pointer-events-none
+  opacity-30
+">
+                <Glow x={-40} y={-30} color="rgba(227,148,0,0.25)" />
+                <Glow x={40} y={-20} color="rgba(0,151,254,0.25)" />
+                <Glow x={55} y={20} color="rgba(0,173,9,0.25)" />
+                <Glow x={0} y={55} color="rgba(243,71,255,0.25)" />
+                <Glow x={-55} y={20} color="rgba(153,102,255,0.25)" />
+                <Glow x={-35} y={-5} color="rgba(255,71,71,0.25)" />
+            </div>
 
-            {/* <ParallaxLayer speed={0.1} offset={2}> */}
-            <div className="container mx-auto px-6">
-
-                <div className="grid lg:grid-cols-2 gap-16 lg:gap-28 items-center max-w-7xl mx-auto">
-                    {/* Image Section – Clean, elevated, modern */}
-
+            <motion.div
+                ref={ref}
+                variants={container}
+                initial="hidden"
+                animate={inView ? "show" : "hidden"}
+                className="relative z-10 max-w-7xl mx-auto space-y-6 overflow-hidden"
+            >
+                {/* ================= TOP ================= */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 overflow-hidden">
+                    {/* Profile */}
                     <motion.div
-                        initial={{ opacity: 0, x: -80 }}
-                        animate={inView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className="flex justify-center"
+                        variants={card}
+                        className="
+              lg:col-span-4
+              border border-border rounded-3xl p-8
+              flex flex-col items-center justify-center text-center
+              min-h-[520px]
+              overflow-hidden bg-background/50
+            "
                     >
-                        <div className="relative group">
-                            {/* Soft outer glow */}
-                            <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl group-hover:bg-primary/30 transition duration-1000" />
+                        <img
+                            src="/me2.png"
+                            alt="Gaurav"
+                            className="rounded-2xl aspect-square object-cover max-w-[240px] w-full"
+                        />
 
-                            {/* Image container */}
-                            <div className="relative">
-                                <motion.div
-                                    whileHover={{ scale: 1.05 }}
-                                    transition={{ duration: 0.7 }}
-                                    className="overflow-hidden rounded-3xl shadow-none"
-                                >
-                                    <img
-                                        src="/me2.png"
-                                        alt="Gaurav"
-                                        className="w-96 h-96 md:w-[440px] md:h-[440px] object-cover rounded-3xl"
-                                    />
-                                </motion.div>
+                        <h2 className="text-3xl font-bold mt-6">Gaurav</h2>
+                        <p className="text-muted-foreground">Full-Stack Developer</p>
 
-                                {/* Floating badge */}
+                        <div className="flex items-center gap-2 text-muted-foreground mt-3">
+                            <MapPin className="h-4 w-4 shrink-0" />
+                            <span className="text-sm">New Delhi, India</span>
+                        </div>
 
-                            </div>
+                        <div className="flex gap-6 mt-5">
+                            <Github className="h-6 w-6 hover:scale-125 transition" />
+                            <Gitlab className="h-6 w-6 hover:scale-125 transition" />
                         </div>
                     </motion.div>
 
-                    {/* Text Section – Spacious, elegant, highly readable */}
-
-                    <motion.div
-                        initial={{ opacity: 0, x: 80 }}
-                        animate={inView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-                        className="space-y-12 mt-50"
-                    >
-                        {/* Greeting & Title */}
-                        <div className="space-y-6">
-                            <motion.h1
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={inView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ delay: 0.4, duration: 0.9 }}
-                                className="text-5xl md:text-7xl font-bold leading-tight"
-                            >
-                                Hi, I'm{" "}
-                                <span className="bg-gradient-to-r from-primary via-primary/90 to-primary/30 bg-clip-text text-transparent">
-                                    Gaurav
-                                </span>
-                            </motion.h1>
-
-                            <motion.p
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={inView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ delay: 0.6, duration: 0.9 }}
-                                className="text-3xl md:text-4xl font-light text-foreground/80"
-                            >
-                                Passionate Full-Stack Developer
-                            </motion.p>
-                        </div>
-
-                        {/* Description paragraphs – airy and scannable */}
-                        <div className="space-y-7 text-lg md:text-xl text-foreground/85 leading-relaxed max-w-2xl">
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={inView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ delay: 0.8 }}
-                            >
-                                I'm an engineering student crafting modern, high-performance web applications that deliver exceptional user experiences.
-                            </motion.p>
-
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={inView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ delay: 1.0 }}
-                            >
-                                I specialize in the <strong className="font-semibold">MERN</strong> and <strong className="font-semibold">LAMP</strong> stacks, with extensive experience in{" "}
-                                <strong className="font-semibold">Next.js</strong>, <strong className="font-semibold">Redis</strong>,{" "}
-                                <strong className="font-semibold">Docker</strong>, and <strong className="font-semibold">PostgreSQL</strong>.
-                            </motion.p>
-
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={inView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ delay: 1.2 }}
-                            >
-                                I've built and optimized real-time systems supporting{" "}
-                                <span className="text-primary font-bold">over 100k concurrent users</span>, while designing clean, responsive, and intuitive interfaces.
-                            </motion.p>
-
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={inView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ delay: 1.4 }}
-                                className="text-2xl font-medium text-foreground"
-                            >
-                                I turn complex problems into elegant, efficient, and scalable solutions.
-                            </motion.p>
-                        </div>
-
-                        {/* Skills – Minimal, animated pills */}
+                    {/* Right side */}
+                    <div className="lg:col-span-8  grid grid-cols-1 gap-6 overflow-hidden">
+                        {/* About */}
                         <motion.div
-                            initial={{ opacity: 0, y: 40 }}
-                            animate={inView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ delay: 1.6 }}
-                            className="flex flex-wrap gap-4"
+                            variants={card}
+                            className="
+                border border-border rounded-3xl p-8 sm:p-10
+                flex flex-col justify-center
+                text-center lg:text-left
+                bg-background/50
+                min-h-[260px]
+                overflow-hidden
+              "
                         >
-                            {skills.map((skill, i) => (
-                                <motion.span
-                                    key={skill}
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    animate={inView ? { opacity: 1, scale: 1 } : {}}
-                                    transition={{ delay: 1.7 + i * 0.08, duration: 0.5 }}
-                                    whileHover={{ scale: 1.1, y: -4 }}
-                                    className="px-3 py-2 bg-primary/10 hover:bg-primary/20 text-foreground/90 font-medium rounded-full border border-primary/20 transition-all duration-300 cursor-pointer"
-                                >
-                                    {skill}
-                                </motion.span>
-                            ))}
+                            <h3 className="text-3xl font-bold mb-6">About Me</h3>
+                            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-full">
+                                I’m a passionate Full-Stack Developer who enjoys building scalable,
+                                performant, and pixel-perfect web experiences. I specialize in
+                                MERN, LAMP, Next.js, and backend-focused systems.
+                            </p>
                         </motion.div>
 
-
-                    </motion.div>
+                        {/* Stats */}
+                        <motion.div
+                            variants={card}
+                            className="
+                border border-border rounded-3xl p-8
+                grid grid-cols-1 sm:grid-cols-3 gap-6
+                text-center
+                overflow-hidden
+                bg-background/50
+              "
+                        >
+                            {stats.map((stat) => (
+                                <div key={stat.label}>
+                                    <div className="text-4xl font-bold">{stat.value}</div>
+                                    <div className="text-sm text-muted-foreground mt-1">
+                                        {stat.label}
+                                    </div>
+                                </div>
+                            ))}
+                        </motion.div>
+                    </div>
                 </div>
 
-            </div>
-            {/* </ParallaxLayer> */}
-            {/* <MonochromeBackground theme={theme} /> */}
+                {/* ================= SKILLS (FULL WIDTH) ================= */}
+                <motion.div
+                    variants={card}
+                    className="
+            border border-border rounded-3xl p-6 sm:p-8
+            overflow-hidden
+            bg-background/50
+          "
+                >
+                    <div
+                        className="
+              max-w-full
+              flex flex-wrap
+              justify-center
+              gap-2 sm:gap-4
+            "
+                    >
+                        {skills.map((skill) => (
+                            <motion.span
+                                key={skill}
+                                whileHover={{ scale: 1.08, y: -2 }}
+                                className="
+                  px-3 py-1.5 sm:px-6 sm:py-3
+                  rounded-full bg-muted
+                  text-xs sm:text-sm font-medium
+                  whitespace-nowrap
+                  max-w-full
+                "
+                            >
+                                {skill}
+                            </motion.span>
+                        ))}
+                    </div>
+                </motion.div>
+            </motion.div>
         </section>
-        
-        </>
-    )
+    );
 }
