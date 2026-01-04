@@ -244,7 +244,7 @@ export default function Projects() {
   }, [emblaApi]);
 
   return (
-    <section id="projects" className="py-20 md:py-32 bg-background relative">
+    <section id="projeffcts" className="py-20 md:py-32 bg-background relative">
       <div className="text-center mb-16 md:mb-20">
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-60">My Projects</h1>
       </div>

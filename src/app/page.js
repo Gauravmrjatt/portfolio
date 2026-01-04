@@ -11,6 +11,7 @@ import EducationTimeline from "./Education";
 import Achievements from "./Achievements";
 import DownloadResume from "./DownloadResume";
 import Dock from "./DockBar";
+import ProjextGalery from "@/components/ProjectGalery"
 import { ScrollSpy , ActiveSectionProvider} from '@/components/Dock';
 export default function Home() {
   return (
@@ -68,7 +69,8 @@ export default function Home() {
         </LazySection>
         {/* projects */}
         <LazySection>
-          <Projects />
+          <ProjextGalery/>
+          {/* <Projects /> */}
         </LazySection>
 
         {/* education */}
