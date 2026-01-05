@@ -357,7 +357,7 @@ export default function App() {
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tight">My Projects</h1>
             </div>
 
-            <div className="flex flex-col md:flex-row justify-center items-center h-screen w-screen relative overflow-hidden bg-background text-foreground gap-30">
+            <div className="flex flex-col md:flex-row justify-center items-center h-screen w-screen relative overflow-hidden bg-background text-foreground gap-20">
                 {/* ================= SIDEBAR ================= */}
                 <aside className="w-full md:w-64 border-b md:border-b-0 border-border/40 bg-transparent md:h-screen sticky top-0 md:relative z-40 flex flex-col justify-start md:justify-center">
                     <div className="flex flex-col max-h-screen md:max-h-[80vh]">

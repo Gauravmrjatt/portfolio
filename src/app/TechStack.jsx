@@ -400,9 +400,12 @@ const TechCard = forwardRef(
         <div className="w-full h-full flex items-center justify-center -mt-5 p-8 bg-gradient-to-br from-card to-card/50">
           {icon}
         </div>
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
-          <p className="text-xs font-semibold text-white text-center truncate">
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2">
+          <p className="text-xs font-semibold text-white text-center truncate -mt-3">
             {title}
+          </p>
+          <p className="text-xs font-semibold  text-center truncate bg-muted px-2 py-1 rounded-full mt-2 text-muted-foreground">
+            view all
           </p>
         </div>
       </div>
