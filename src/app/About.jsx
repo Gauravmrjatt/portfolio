@@ -6,7 +6,7 @@ import { Github, Gitlab, MapPin } from "lucide-react";
 import Glow from "@/components/Glow";
 const stats = [
     { value: "2+", label: "Years Experience" },
-    { value: "3+", label: "Internships" },
+    { value: "100+", label: "Problems Solved" },
     { value: "5+", label: "Projects" },
 ];
 
@@ -100,7 +100,7 @@ export default function AboutMe() {
 
                         <div className="flex items-center gap-2 text-muted-foreground mt-3">
                             <MapPin className="h-4 w-4 shrink-0" />
-                            <span className="text-sm">New Delhi, India</span>
+                            <span className="text-sm">New Mathura, India</span>
                         </div>
 
                         <div className="flex gap-6 mt-5">
