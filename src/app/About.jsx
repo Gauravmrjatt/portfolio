@@ -100,7 +100,7 @@ export default function AboutMe() {
 
                         <div className="flex items-center gap-2 text-muted-foreground mt-3">
                             <MapPin className="h-4 w-4 shrink-0" />
-                            <span className="text-sm">New Mathura, India</span>
+                            <span className="text-sm">Mathura, India</span>
                         </div>
 
                         <div className="flex gap-6 mt-5">

@@ -205,7 +205,7 @@ const projects = [
     title: "Data Vault",
     icon: "skill-icons:react-dark",
     description:
-      "Secure file-sharing platform using Telegram Bot API as backend storage for efficient, low-cost file management.",
+      "Secure chunks based file-sharing platform using Telegram Bot API as backend storage for efficient, low-cost file management.",
     link: "https://datavault-two.vercel.app/",
     cta: "Visit App",
     techStack: [
@@ -219,6 +219,28 @@ const projects = [
     span: "lg:col-span-4",
     background: "bg-gradient-to-br from-white to-black/20 dark:from-white/30 dark:to-transparent",
   },
+  {
+  title: "TicketHub",
+  icon: "devicon:nextjs",
+  description:
+    "Modern event ticket booking and management platform with secure authentication, event creation, ticket issuance, and attendee management. Built with a scalable Next.js architecture and MongoDB backend.",
+  link: "https://tickethub.vercel.app/", // update if different
+  cta: "View Project",
+  techStack: [
+    "devicon:nextjs",
+    "skill-icons:react-dark",
+    "devicon:tailwindcss",
+    "logos:mongodb-icon",
+    "skill-icons:nodejs-dark",
+    "simple-icons:radixui",
+    "simple-icons:jsonwebtoken",
+    "simple-icons:uuid",
+  ],
+  span: "lg:col-span-5",
+  background:
+    "bg-gradient-to-br from-white to-black/20 dark:from-white/30 dark:to-transparent",
+}
+
 ];
 
 export default function Projects() {
@@ -246,7 +268,7 @@ export default function Projects() {
   return (
     <section id="projeffcts" className="py-20 md:py-32 bg-background relative">
       <div className="text-center mb-16 md:mb-20">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-60">My Projects</h1>
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-60">My Projects..</h1>
       </div>
 
       {isMobile ? (

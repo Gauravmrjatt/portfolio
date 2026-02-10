@@ -19,128 +19,175 @@ function cn(...inputs) {
 }
 
 /* ---------------- PROJECTS DATA ---------------- */
-const projects = [
-    {
-        title: "Earning Area",
-        description:
-            "A reward distribution platform that enables users to seamlessly distribute monetary rewards to a large community. Integrates Paytm & OpenMoney APIs with interactive formats like Lifafa and scratch cards.",
-        link: "https://earningarea.org/",
-        cta: "Visit Site",
-        techStack: [
-            "skill-icons:html",
-            "skill-icons:css",
-            "skill-icons:javascript",
-            "skill-icons:jquery",
-            "devicon:php",
-            "logos:mysql",
-            "skill-icons:nodejs-dark",
-            "skill-icons:mongodb",
-            "devicon:redis",
-            "logos:socket-io",
-            "simple-icons:paytm",
-            "logos:telegram"
-        ]
-    },
-    {
-        title: "Dream10",
-        description:
-            "Real-time competitive quiz app with live contests, fair question broadcasting via Socket.IO, leaderboards, and prize distribution.",
-        link: "https://dream10.in/",
-        cta: "Visit Site",
-        techStack: [
-            "logos:react",
-            "devicon:nextjs",
-            "devicon:tailwindcss",
-            "simple-icons:radixui",
-            "simple-icons:reactquery",
-            "devicon:zustand",
-            "tabler:brand-framer-motion",
-            "simple-icons:greensock",
-            "simple-icons:swiper",
-            "skill-icons:threejs-dark",
-            "logos:nodejs-icon",
-            "skill-icons:expressjs-dark",
-            "logos:mongodb-icon",
-            "devicon:redis",
-            "simple-icons:bullmq",
-            "logos:socket-io",
-            "logos:jwt-icon",
-            "simple-icons:sentry",
-            "simple-icons:razorpay",
-            "logos:prometheus"
-        ]
-    },
-    {
-        title: "Lead Tracking System",
-        description:
-            "Invite-only affiliate marketing platform with fraud detection, real-time dashboards, and automated payout engine.",
-        link: "https://panel3.logicpay.in/",
-        cta: "Visit Dashboard",
-        techStack: [
-            "logos:nodejs-icon",
-            "logos:socket-io",
-            "devicon:redis",
-            "logos:mongodb-icon",
-            "devicon:nextjs",
-            "devicon:tailwindcss",
-            "devicon:rabbitmq",
-            "simple-icons:bullmq",
-            "logos:grafana",
-            "logos:prometheus",
-            "simple-icons:grafana-loki",
-            "simple-icons:coolify",
-            "vscode-icons:file-type-sentry",
-            "logos:jwt-icon",
-            "logos:docker-icon",
-            "logos:material-ui"
-        ]
-    },
-    {
-        title: "TOD-AI",
-        description:
-            "Interactive toddler learning app teaching the alphabet through animations, audio pronunciation, and engaging visuals.",
-        link: "https://tod-ai-teal.vercel.app/",
-        cta: "Try It",
-        techStack: [
-            "logos:react",
-            "devicon:nextjs",
-            "devicon:tailwindcss",
-            "simple-icons:radixui",
-            "simple-icons:styledcomponents",
-            "tabler:brand-framer-motion",
-            "skill-icons:threejs-dark",
-            "devicon:zustand",
-            "simple-icons:reactquery",
-            "simple-icons:axios",
-            "logos:nodejs-icon",
-            "logos:socket-io",
-            "devicon:redis",
-            "logos:mongodb-icon",
-            "logos:grafana",
-            "logos:prometheus",
-            "logos:jwt-icon",
-            "logos:docker-icon"
-        ]
-    },
-    {
-        title: "Data Vault",
-        description:
-            "Secure file-sharing platform using Telegram Bot API as backend storage for efficient, low-cost file management.",
-        link: "https://datavault-two.vercel.app/",
-        cta: "Visit App",
-        techStack: [
-            "logos:nodejs-icon",
-            "logos:mongodb-icon",
-            "devicon:nextjs",
-            "devicon:tailwindcss",
-            "logos:jwt-icon",
-            "logos:react",
-            "simple-icons:radixui",
-            "simple-icons:reacthookform",
-            "simple-icons:zod",
-            "simple-icons:lucide"
-        ]
-    }
+const projects = [{
+    title: "CodeLab",
+    icon: "skill-icons:nextjs-dark",
+    description:
+        "Real-time collaborative coding platform featuring shared code editors, live cursors, rich text docs, whiteboard collaboration, and presence awareness. Built with Yjs-powered CRDT syncing, Socket.IO, Monaco Editor, and a scalable Dockerized architecture.",
+    link: "https://codellab.vercel.app/", // update if needed
+    cta: "View Platform",
+    techStack: [
+        "devicon:nextjs",
+        "skill-icons:react-dark",
+        "devicon:typescript",
+        "devicon:tailwindcss",
+        "simple-icons:monacoeditor",
+        "logos:socket-io",
+        "simple-icons:yjs",
+        "simple-icons:prisma",
+        "logos:docker-icon",
+        "logos:postgresql", // or mysql if applicable
+        "simple-icons:nextauth",
+        "simple-icons:radixui",
+        "simple-icons:zustand",
+    ],
+    span: "lg:col-span-7",
+    background:
+        "bg-gradient-to-br from-white to-black/20 dark:from-white/30 dark:to-transparent",
+}
+    ,
+{
+    title: "Earning Area",
+    description:
+        "A reward distribution platform that enables users to seamlessly distribute monetary rewards to a large community. Integrates Paytm & OpenMoney APIs with interactive formats like Lifafa and scratch cards.",
+    link: "https://earningarea.org/",
+    cta: "Visit Site",
+    techStack: [
+        "skill-icons:html",
+        "skill-icons:css",
+        "skill-icons:javascript",
+        "skill-icons:jquery",
+        "devicon:php",
+        "logos:mysql",
+        "skill-icons:nodejs-dark",
+        "skill-icons:mongodb",
+        "devicon:redis",
+        "logos:socket-io",
+        "simple-icons:paytm",
+        "logos:telegram"
+    ]
+},
+{
+    title: "Dream10",
+    description:
+        "Real-time competitive quiz app with live contests, fair question broadcasting via Socket.IO, leaderboards, and prize distribution.",
+    link: "https://dream10.in/",
+    cta: "Visit Site",
+    techStack: [
+        "logos:react",
+        "devicon:nextjs",
+        "devicon:tailwindcss",
+        "simple-icons:radixui",
+        "simple-icons:reactquery",
+        "devicon:zustand",
+        "tabler:brand-framer-motion",
+        "simple-icons:greensock",
+        "simple-icons:swiper",
+        "skill-icons:threejs-dark",
+        "logos:nodejs-icon",
+        "skill-icons:expressjs-dark",
+        "logos:mongodb-icon",
+        "devicon:redis",
+        "simple-icons:bullmq",
+        "logos:socket-io",
+        "logos:jwt-icon",
+        "simple-icons:sentry",
+        "simple-icons:razorpay",
+        "logos:prometheus"
+    ]
+},
+{
+    title: "Lead Tracking System",
+    description:
+        "Invite-only affiliate marketing platform with fraud detection, real-time dashboards, and automated payout engine.",
+    link: "https://panel3.logicpay.in/",
+    cta: "Visit Dashboard",
+    techStack: [
+        "logos:nodejs-icon",
+        "logos:socket-io",
+        "devicon:redis",
+        "logos:mongodb-icon",
+        "devicon:nextjs",
+        "devicon:tailwindcss",
+        "devicon:rabbitmq",
+        "simple-icons:bullmq",
+        "logos:grafana",
+        "logos:prometheus",
+        "simple-icons:grafana-loki",
+        "simple-icons:coolify",
+        "vscode-icons:file-type-sentry",
+        "logos:jwt-icon",
+        "logos:docker-icon",
+        "logos:material-ui"
+    ]
+},
+{
+    title: "TOD-AI",
+    description:
+        "Interactive toddler learning app teaching the alphabet through animations, audio pronunciation, and engaging visuals.",
+    link: "https://tod-ai-teal.vercel.app/",
+    cta: "Try It",
+    techStack: [
+        "logos:react",
+        "devicon:nextjs",
+        "devicon:tailwindcss",
+        "simple-icons:radixui",
+        "simple-icons:styledcomponents",
+        "tabler:brand-framer-motion",
+        "skill-icons:threejs-dark",
+        "devicon:zustand",
+        "simple-icons:reactquery",
+        "simple-icons:axios",
+        "logos:nodejs-icon",
+        "logos:socket-io",
+        "devicon:redis",
+        "logos:mongodb-icon",
+        "logos:grafana",
+        "logos:prometheus",
+        "logos:jwt-icon",
+        "logos:docker-icon"
+    ]
+},
+{
+    title: "Data Vault",
+    description:
+        "Secure file-sharing platform using Telegram Bot API as backend storage for efficient, low-cost file management.",
+    link: "https://datavault-two.vercel.app/",
+    cta: "Visit App",
+    techStack: [
+        "logos:nodejs-icon",
+        "logos:mongodb-icon",
+        "devicon:nextjs",
+        "devicon:tailwindcss",
+        "logos:jwt-icon",
+        "logos:react",
+        "simple-icons:radixui",
+        "simple-icons:reacthookform",
+        "simple-icons:zod",
+        "simple-icons:lucide"
+    ]
+}, {
+    title: "TicketHub",
+    icon: "devicon:nextjs",
+    description:
+        "Modern event ticket booking and management platform with secure authentication, event creation, ticket issuance, and attendee management. Built with a scalable Next.js architecture and MongoDB backend.",
+    link: "https://tickethub.vercel.app/", // update if different
+    cta: "View Project",
+    techStack: [
+        "devicon:nextjs",
+        "skill-icons:react-dark",
+        "devicon:tailwindcss",
+        "logos:mongodb-icon",
+        "skill-icons:nodejs-dark",
+        "simple-icons:radixui",
+        "simple-icons:jsonwebtoken",
+        "simple-icons:uuid",
+    ],
+    span: "lg:col-span-5",
+    background:
+        "bg-gradient-to-br from-white to-black/20 dark:from-white/30 dark:to-transparent",
+}
+
 ];
 
 /* ---------------- CARD GENERATION ---------------- */
@@ -157,19 +204,115 @@ const allCards = projects.flatMap(project =>
 )
 
 const frontendKeywords = [
-    "html", "css", "javascript", "react", "nextjs", "tailwindcss", "radix-ui", "react-query",
-    "react-table", "react-hook-form", "zod", "zustand", "framer-motion", "gsap", "swiper",
-    "recharts", "threejs", "react-three-fiber", "lucide-react", "tabler-icons", "lottie",
-    "axios", "jwt", "socket-io", "sentry", "razorpay", "onesignal", "styled-components",
-    "tesseract", "cmdk", "clsx", "class-variance-authority", "date-fns", "react-day-picker",
-    "embla-carousel", "sonner", "vaul", "next-themes"
+  // Core
+  "html",
+  "css",
+  "javascript",
+  "typescript",
+  "react",
+  "nextjs",
+
+  // Styling & UI
+  "tailwindcss",
+  "radix-ui",
+  "styled-components",
+  "clsx",
+  "class-variance-authority",
+  "lucide-react",
+  "tabler-icons",
+  "lottie",
+  "vaul",
+  "cmdk",
+  "sonner",
+  "next-themes",
+
+  // State & Data
+  "react-query",
+  "zustand",
+  "axios",
+  "jwt",
+
+  // Forms & Validation
+  "react-hook-form",
+  "zod",
+
+  // Tables & Charts
+  "react-table",
+  "recharts",
+
+  // Animations
+  "framer-motion",
+  "gsap",
+  "swiper",
+  "embla-carousel",
+
+  // 3D & Advanced UI
+  "threejs",
+  "react-three-fiber",
+
+  // Dates & Utils
+  "date-fns",
+  "react-day-picker",
+
+  // Realtime & Integrations
+  "socket-io",
+  "sentry",
+  "razorpay",
+  "onesignal",
+
+  // OCR & Media
+  "tesseract"
 ];
 
+
 const backendKeywords = [
-    "logos:mysql", "nodejs", "express", "mongodb", "mongoose", "redis", "ioredis", "bull-mq",
-    "socket-io", "ws", "jwt", "bcrypt", "dotenv", "nodemailer", "multer", "cloudinary",
-    "razorpay", "rate-limiter", "helmet", "cors", "compression", "prometheus", "sentry",
-    "nextjs-server", "ocr", "tesseract", "rabbitmq", "grafana", "docker"
+  // Runtime & Frameworks
+  "nodejs",
+  "express",
+  "nextjs-server",
+
+  // Databases & ORM
+  "mysql",
+  "mongodb",
+  "mongoose",
+  "prisma",
+
+  // Cache & Queues
+  "redis",
+  "ioredis",
+  "bull-mq",
+  "rabbitmq",
+
+  // Realtime
+  "socket-io",
+  "ws",
+
+  // Auth & Security
+  "jwt",
+  "bcrypt",
+  "helmet",
+  "cors",
+  "rate-limiter",
+
+  // DevOps & Infra
+  "docker",
+  "prometheus",
+  "grafana",
+  "sentry",
+
+  // Utilities
+  "dotenv",
+  "nodemailer",
+  "multer",
+  "cloudinary",
+  "compression",
+
+  // Payments & Services
+  "razorpay",
+
+  // OCR & Processing
+  "ocr",
+  "tesseract"
 ];
 
 function isFrontend(tech) {
