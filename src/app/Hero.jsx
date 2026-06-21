@@ -1,5 +1,5 @@
 import { TextAnimate } from "@/components/magicui/text-animate";
-import Image from "next/image";
+
 import TextAnimation from "@/components/TextAnimation";
 import GlassIcons from "@/components/magicui/GlassIcon";
 import items from "./items"
@@ -7,14 +7,16 @@ import { Sparkles } from "@/components/Aurora/sparkles";
 import { useTheme } from "next-themes";
 import Glow from "@/components/Glow";
 import { HeroPill, StarIcon } from "@/components/HeroPill"
+import InkReveal from "@/components/ui/ink-reveal";
+import TechGridBackground from "@/components/ui/tech-grid-background";
+
 
 export default function Hero() {
     const { theme } = useTheme()
     return (<>
         {/* <ParallaxScroll> */}
         <section id="home" className="relative overflow-hidden flex min-h-dvh bg-background flex-col md:flex-col snap-start z-[50] ">
-
-
+        
             {/* TEXT — CENTERED (shifted slightly left on desktop) */}
             <div
                 className="
@@ -45,14 +47,14 @@ export default function Hero() {
                 </div>
                 <span className="font-mono mb-4">
                     {/* <TextAnimate animation="slideLeft" by="character"> */}
-                        <HeroPill
-                            icon={<StarIcon />}
-                            text="Full Stack Developer"
-                        />
+                    <HeroPill
+                        icon={<StarIcon />}
+                        text="Full Stack Developer"
+                    />
                     {/* </TextAnimate> */}
                 </span>
 
-                <h1 className="dancing md:text-9xl mt-4  text-6xl">
+                <h1 className="dancing md:text-9xl mt-4  text-6xl text-balance">
                     <TextAnimate
                         by="character"
                         className="font-medium dancing font-dancing dancing md:text-9xl text-6xl">
@@ -107,6 +109,7 @@ export default function Hero() {
                 object-contain
                 max-h-[40dvh] 
                 md:max-h-[70dvh]
+                outline outline-1 outline-black/10 dark:outline-white/10
             "
                 />
             </div>
@@ -123,6 +126,21 @@ export default function Hero() {
                 />
             </div>
             {/* </ParallaxLayer> */}
+
+            <TechGridBackground
+                density={0.5}
+                opacityProp={0.25}
+                className="absolute inset-0"
+                style={{ zIndex: 1 }}
+            />
+
+            <InkReveal
+                mode="reveal"
+                maskColor={theme === "dark" ? [0, 0, 0] : [255, 255, 255]}
+                brushSize={300}
+                stampStep={6}
+                style={{ zIndex: 5 }}
+            />
         </section>
         {/* </ParallaxScroll> */}
 

@@ -320,7 +320,7 @@ export const DockLabel = ({ children, className }) => {
 
   return (
     <div ref={parentRef}>
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {isVisible && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}

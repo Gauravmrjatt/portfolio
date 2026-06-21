@@ -15,8 +15,7 @@ const GlassIcons = ({ items, className }) => {
                     <button
                         type="button"
                         aria-label={item.label}
-                        className={`relative bg-transparent outline-none h-[2.5em] w-[2.5em] [perspective:24em] [transform-style:preserve-3d] [-webkit-tap-highlight-color:transparent] group ${item.customClass || ""
-                            }`}
+                        className={`relative bg-transparent outline-none h-[2.5em] w-[2.5em] min-h-[40px] min-w-[40px] [perspective:24em] [transform-style:preserve-3d] [-webkit-tap-highlight-color:transparent] transition-transform duration-150 active:scale-[0.96] group ${item.customClass || ""}`}
                     >
 
                         <span className="m-auto h-[100%] w-[100%] flex items-center justify-center" aria-hidden="true">

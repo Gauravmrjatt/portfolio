@@ -13,9 +13,12 @@ import DownloadResume from "./DownloadResume";
 import Dock from "./DockBar";
 import ProjextGalery from "@/components/ProjectGalery"
 import { ScrollSpy , ActiveSectionProvider} from '@/components/Dock';
+import TechGridBackground from "@/components/ui/tech-grid-background";
 export default function Home() {
   return (
-    <ActiveSectionProvider>
+    <>
+      <TechGridBackground density={0.5} opacityProp={0.2} className="fixed inset-0" style={{ zIndex: -1 }} />
+      <ActiveSectionProvider>
       <div className="overflow-y-auto hide-scrollbar">
         <ScrollSpy />
         <HeroSection />
@@ -101,5 +104,6 @@ export default function Home() {
         <Dock />
       </div>
     </ActiveSectionProvider>
+    </>
   );
 }

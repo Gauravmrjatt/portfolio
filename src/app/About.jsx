@@ -92,7 +92,7 @@ export default function AboutMe() {
                         <img
                             src="/me2.png"
                             alt="Gaurav"
-                            className="rounded-2xl aspect-square object-cover max-w-[240px] w-full"
+                            className="rounded-2xl aspect-square object-cover max-w-[240px] w-full outline outline-1 outline-black/10 dark:outline-white/10"
                         />
 
                         <h2 className="text-3xl font-bold mt-6">Gaurav</h2>
@@ -124,7 +124,7 @@ export default function AboutMe() {
               "
                         >
                             <h3 className="text-3xl font-bold mb-6">About Me</h3>
-                            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-full">
+                            <p className="text-base sm:text-lg text-muted-foreground text-pretty leading-relaxed max-w-full">
                                 I’m a passionate Full-Stack Developer who enjoys building scalable,
                                 performant, and pixel-perfect web experiences. I specialize in
                                 MERN, LAMP, Next.js, and backend-focused systems.
