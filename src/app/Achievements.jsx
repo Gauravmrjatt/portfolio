@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { useState } from "react"
-import { motion, AnimatePresence, LayoutGroup } from "framer-motion"
+import { motion, AnimatePresence, LayoutGroup } from "motion/react"
 import {
   Trophy,
   Award,
@@ -272,7 +272,7 @@ export default function Achievements() {
     <section id="achievements" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-16 md:mb-20">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-balance">
             Achievements & Certifications
           </h1>
         </div>

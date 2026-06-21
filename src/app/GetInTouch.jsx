@@ -33,8 +33,8 @@ export default function GetInTouch() {
             key={index}
             href={item.href}
             target="_blank"
-            rel="noopener noreferrer"
-            className="flex h-16 w-16 items-center justify-center rounded-full bg-muted/70 transition-all hover:scale-110 hover:bg-muted"
+            rel="me noopener noreferrer"
+            className="flex h-16 w-16 items-center justify-center rounded-full bg-muted/70 transition-[scale,background] duration-150 ease-out hover:scale-110 hover:bg-muted active:scale-[0.96]"
           >
             {item.icon}
           </a>
@@ -52,7 +52,7 @@ export default function GetInTouch() {
             "flex items-center justify-center gap-3",
             "rounded-xl px-6 py-4 font-semibold",
             "bg-primary text-primary-foreground",
-            "shadow-md transition-all hover:-translate-y-0.5 hover:shadow-xl"
+            "shadow-md transition-[transform,box-shadow] duration-150 ease-out hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.96]"
           )}
         >
           <Download className="h-5 w-5" />

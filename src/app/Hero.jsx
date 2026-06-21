@@ -10,6 +10,7 @@ import { HeroPill, StarIcon } from "@/components/HeroPill"
 import InkReveal from "@/components/ui/ink-reveal";
 import TechGridBackground from "@/components/ui/tech-grid-background";
 import TechOrbit from "@/components/ui/tech-orbit";
+import Image from "next/image";
 
 
 export default function Hero() {
@@ -55,11 +56,11 @@ export default function Hero() {
                     {/* </TextAnimate> */}
                 </span>
 
-                <h1 className="dancing md:text-9xl mt-4  text-6xl text-balance">
+               <h1 className="dancing md:text-9xl mt-4  text-6xl text-balance">
                     <TextAnimate
                         by="character"
                         className="font-medium dancing font-dancing dancing md:text-9xl text-6xl">
-                        Gaurav
+                        Gaurav 
                     </TextAnimate>
                 </h1>
                 <h1 className="dancing  md:text-9xl  mb-4 text-6xl">
@@ -73,7 +74,7 @@ export default function Hero() {
                     </TextAnimation>
                 </h1>
                 <span className="mt-5 font-sans">
-                    <TextAnimate animation="slideLeft" by="character">
+                    <TextAnimate animation="slideLeft" by="character" className="text-pretty">
                         I'm a full-stack web-developer from India
                     </TextAnimate>
 
@@ -100,8 +101,12 @@ export default function Hero() {
         md:pr-[5%]
         lg:h-[70dvh]
     ">
-                <img
-                    src="/me2.png"
+                <Image
+                    src="/gaurav-chaudhary-hero.png"
+                    alt="Gaurav Chaudhary — Full-Stack Developer"
+                    width={500}
+                    height={700}
+                    priority
                     className="
                 pointer-events-none 
                 select-none 
@@ -113,7 +118,7 @@ export default function Hero() {
                 lg:max-h-[70dvh]
                 
             "
-                />
+                />b
               
             </div>
             {/* </ParallaxLayer> */}

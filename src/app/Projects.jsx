@@ -44,7 +44,7 @@ const BentoCard = ({
       className={cn(
         "group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60",
         "bg-white/80 dark:bg-neutral-950/80 backdrop-blur-md shadow-xl hover:shadow-2xl",
-        "transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015]",
+        "transition-[transform,box-shadow] duration-500 hover:-translate-y-2 hover:scale-[1.015]",
         "w-full", // ensures full width in carousel
         className
       )}
@@ -92,7 +92,7 @@ const BentoCard = ({
               "inline-flex items-center gap-2 px-5 py-3 text-sm font-medium rounded-xl",
               "bg-neutral-900 dark:bg-white text-white dark:text-neutral-900",
               "hover:bg-neutral-800 dark:hover:bg-neutral-100",
-              "transition-all duration-300 hover:gap-3 hover:shadow-lg"
+              "transition-[gap,box-shadow,background] duration-300 hover:gap-3 hover:shadow-lg active:scale-[0.96]"
             )}
           >
             {cta}

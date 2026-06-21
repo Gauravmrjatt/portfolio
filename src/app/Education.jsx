@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { School, BookOpen, GraduationCap } from "lucide-react";
 
 const educationItems = [
@@ -95,7 +95,7 @@ const EducationZigZagTimeline = () => {
       "
     >
       {/* Heading */}
-      <h1 className="mb-16 text-center text-4xl font-bold tracking-tight sm:mb-20 sm:text-6xl">
+      <h1 className="mb-16 text-center text-4xl font-bold tracking-tight sm:mb-20 sm:text-6xl text-balance">
         Education Journey
       </h1>
 

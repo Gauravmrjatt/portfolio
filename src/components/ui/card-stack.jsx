@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence, LayoutGroup } from "framer-motion"
+import { motion, AnimatePresence, LayoutGroup } from "motion/react"
 import { cn } from "@/lib/utils"
 import { Grid3X3, Layers, LayoutList } from "lucide-react"
 

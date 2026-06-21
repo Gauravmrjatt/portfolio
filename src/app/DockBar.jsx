@@ -6,7 +6,7 @@ import { dockItems } from '@/lib/dock-data';
 
 export default function FloatingDock() {
   return (
-    <div className="fixed bottom-0 md:bottom-6 left-1/2 -translate-x-1/2 z-40">
+    <div className="fixed bottom-0 md:bottom-6 left-1/2 -translate-x-1/2 z-40 pb-[env(safe-area-inset-bottom,0px)]">
 
       <Dock>
         {dockItems.map((item) => (

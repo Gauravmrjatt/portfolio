@@ -9,9 +9,9 @@ export default function InkReveal({
   lifetime = 600,
   rStart = 10,
   rVary = 0.25,
-  stampStep = 6,
-  maxStamps = 200,
-  segments = 96,
+  stampStep = 12,
+  maxStamps = 100,
+  segments = 48,
   wobble = [0.06, 0.03, 0.02],
   opacity = 0.35,
   className,
@@ -23,6 +23,7 @@ export default function InkReveal({
   const lastPosRef = useRef(null)
   const dimsRef = useRef({ w: 0, h: 0 })
   const parentRef = useRef(null)
+  const throttleRef = useRef(0)
 
   const resize = useCallback(() => {
     const canvas = canvasRef.current
@@ -31,7 +32,7 @@ export default function InkReveal({
     parentRef.current = parent
     if (!parent) return
 
-    const dpr = Math.min(window.devicePixelRatio || 1, 2)
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5)
     const rect = parent.getBoundingClientRect()
     const w = rect.width
     const h = rect.height
@@ -170,6 +171,9 @@ export default function InkReveal({
   }, [resize])
 
   const handleMouseMove = useCallback((x, y) => {
+    const now = Date.now()
+    if (now - throttleRef.current < 20) return
+    throttleRef.current = now
     const parent = parentRef.current
     if (!parent) return
     const rect = parent.getBoundingClientRect()

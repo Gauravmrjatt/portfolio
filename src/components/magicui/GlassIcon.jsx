@@ -11,6 +11,7 @@ const GlassIcons = ({ items, className }) => {
                     key={index}
                     href={item.href}
                     target="_blank"
+                    rel="me noopener noreferrer"
                     className="relative bg-transparent outline-none h-[3em] w-[3em] [perspective:24em] [transform-style:preserve-3d] [-webkit-tap-highlight-color:transparent] group">
                     <button
                         type="button"

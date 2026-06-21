@@ -1,18 +1,18 @@
 "use client"
+import dynamic from "next/dynamic";
 import TextAnimation from "@/components/TextAnimation";
 import LazySection from "@/components/LazySection";
 import HeroSection from "./Hero";
-import TechStackSection from "./TechStack";
 import AboutMe from "./About";
-import Projects from "./Projects";
-import GetInTouch from "@/app/GetInTouch";
 import Footer from "./Footer";
 import EducationTimeline from "./Education";
 import Achievements from "./Achievements";
-import DownloadResume from "./DownloadResume";
 import Dock from "./DockBar";
-import ProjextGalery from "@/components/ProjectGalery"
 import { ScrollSpy , ActiveSectionProvider} from '@/components/Dock';
+
+const TechStackSection = dynamic(() => import("./TechStack"), { ssr: false });
+const ProjextGalery = dynamic(() => import("@/components/ProjectGalery"), { ssr: false });
+const DownloadResume = dynamic(() => import("./DownloadResume"), { ssr: false });
 export default function Home() {
   return (
     <ActiveSectionProvider>

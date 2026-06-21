@@ -184,7 +184,7 @@ export default function TechStackFolders() {
       className="min-h-screen bg-background z-[40] flex flex-col items-center justify-center px-6 py-16 pb-30 relative"
     >
       <div className="max-w-7xl mx-auto w-full">
-        <h1 className="text-5xl md:text-7xl font-bold text-center mb-20 tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-bold text-center mb-20 tracking-tight text-balance">
           My Tech Stack
         </h1>
 

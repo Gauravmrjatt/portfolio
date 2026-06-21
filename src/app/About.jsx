@@ -1,9 +1,10 @@
 'use client';
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { Github, Gitlab, MapPin } from "lucide-react";
 import Glow from "@/components/Glow";
+import Image from "next/image";
 const stats = [
     { value: "4+", label: "Years Experience" },
     { value: "100+", label: "Problems Solved" },
@@ -89,9 +90,11 @@ export default function AboutMe() {
               overflow-hidden bg-background/50
             "
                     >
-                        <img
-                            src="/me2.png"
-                            alt="Gaurav"
+                        <Image
+                            src="/gaurav-chaudhary-hero.png"
+                            alt="Gaurav Chaudhary — Full-Stack Developer from Mathura, India"
+                            width={240}
+                            height={240}
                             className="rounded-2xl aspect-square object-cover max-w-[240px] w-full outline outline-1 outline-black/10 dark:outline-white/10"
                         />
 
@@ -104,8 +107,8 @@ export default function AboutMe() {
                         </div>
 
                         <div className="flex gap-6 mt-5">
-                            <Github className="h-6 w-6 hover:scale-125 transition" />
-                            <Gitlab className="h-6 w-6 hover:scale-125 transition" />
+                            <Github className="h-6 w-6 hover:scale-125 transition-transform active:scale-[0.96]" />
+                            <Gitlab className="h-6 w-6 hover:scale-125 transition-transform active:scale-[0.96]" />
                         </div>
                     </motion.div>
 
@@ -123,11 +126,17 @@ export default function AboutMe() {
                 overflow-hidden
               "
                         >
-                            <h3 className="text-3xl font-bold mb-6">About Me</h3>
+                            <h3 className="text-3xl font-bold mb-6 text-balance">About Me</h3>
                             <p className="text-base sm:text-lg text-muted-foreground text-pretty leading-relaxed max-w-full">
                                 I’m a passionate Full-Stack Developer who enjoys building scalable,
                                 performant, and pixel-perfect web experiences. I specialize in
                                 MERN, LAMP, Next.js, and backend-focused systems.
+                            </p>
+                            <p className="text-base sm:text-lg text-muted-foreground text-pretty leading-relaxed max-w-full mt-4">
+                                Over the past 4+ years, I&apos;ve built real-time collaborative platforms,
+                                reward distribution systems serving thousands of users, and
+                                competitive quiz applications with live leaderboards. I focus on
+                                writing clean, maintainable code and designing systems that scale.
                             </p>
                         </motion.div>
 
@@ -144,7 +153,7 @@ export default function AboutMe() {
                         >
                             {stats.map((stat) => (
                                 <div key={stat.label}>
-                                    <div className="text-4xl font-bold">{stat.value}</div>
+                                    <div className="text-4xl font-bold tabular-nums">{stat.value}</div>
                                     <div className="text-sm text-muted-foreground mt-1">
                                         {stat.label}
                                     </div>
