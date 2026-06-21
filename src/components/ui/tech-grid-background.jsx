@@ -44,11 +44,11 @@ function shuffle(arr, rand) {
   return arr
 }
 
-export default function TechGridBackground({ density = 0.55, opacityProp = 0.12, className, style }) {
+export default function TechGridBackground({ density = 0.55, opacityProp = 1.12, className, style }) {
   const items = useMemo(() => {
     const rand = seededRandom(42)
     const cols = 28
-    const rows = 22
+    const rows = 20
     const total = Math.floor(cols * rows * density)
 
     const positions = Array.from({ length: cols * rows }, (_, i) => i)
@@ -84,21 +84,16 @@ export default function TechGridBackground({ density = 0.55, opacityProp = 0.12,
             left: `${item.cx}%`,
             top: `${item.cy}%`,
             transform: `rotate(${item.rotation}deg)`,
-            opacity: opacityProp,
+            opacity: ".7",
             willChange: "translate",
-            "--float-to": `${item.floatY}px`,
-            animation: `tech-float ${item.floatDuration}s ease-in-out ${item.delay}s infinite alternate`
+            // "--float-to": `${item.floatY}px`,
+            // animation: `tech-float ${item.floatDuration}s ease-in-out ${item.delay}s infinite alternate`
           }}
         >
           <Icon icon={item.icon} style={{ width: item.size, height: item.size }} />
         </div>
       ))}
-      <style>{`
-        @keyframes tech-float {
-          from { translate: 0 0; }
-          to { translate: 0 var(--float-to, 10px); }
-        }
-      `}</style>
+    
     </div>
   )
 }

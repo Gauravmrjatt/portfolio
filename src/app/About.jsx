@@ -5,9 +5,9 @@ import { useInView } from "react-intersection-observer";
 import { Github, Gitlab, MapPin } from "lucide-react";
 import Glow from "@/components/Glow";
 const stats = [
-    { value: "2+", label: "Years Experience" },
+    { value: "4+", label: "Years Experience" },
     { value: "100+", label: "Problems Solved" },
-    { value: "5+", label: "Projects" },
+    { value: "7+", label: "Projects" },
 ];
 
 const skills = [

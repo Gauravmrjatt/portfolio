@@ -182,59 +182,40 @@ export default function InkReveal({
   }, [stampAlong, startLoop])
 
   useEffect(() => {
-    if (mode !== "reveal") return
-
     const onMouseMove = e => handleMouseMove(e.clientX, e.clientY)
     const onTouchMove = e => {
       const t = e.touches[0]
       if (t) handleMouseMove(t.clientX, t.clientY)
     }
+    const onMouseEnter = e => handleMouseMove(e.clientX, e.clientY)
+    const onTouchStart = e => {
+      const t = e.touches[0]
+      if (t) handleMouseMove(t.clientX, t.clientY)
+    }
 
     document.addEventListener("mousemove", onMouseMove)
-    document.addEventListener("touchmove", onTouchMove)
+    document.addEventListener("touchmove", onTouchMove, { passive: true })
+    document.addEventListener("mouseenter", onMouseEnter)
+    document.addEventListener("touchstart", onTouchStart, { passive: true })
     return () => {
       document.removeEventListener("mousemove", onMouseMove)
       document.removeEventListener("touchmove", onTouchMove)
+      document.removeEventListener("mouseenter", onMouseEnter)
+      document.removeEventListener("touchstart", onTouchStart)
     }
-  }, [mode, handleMouseMove])
-
-  const getRelativePos = e => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    return { x: e.clientX - rect.left, y: e.clientY - rect.top }
-  }
-
-  const commonProps = {
-    ref: canvasRef,
-    className,
-    style: {
-      position: "absolute",
-      inset: 0,
-      zIndex: 1,
-      cursor: mode === "reveal" ? undefined : "none",
-      ...style
-    }
-  }
-
-  if (mode === "reveal") {
-    return <canvas {...commonProps} />
-  }
+  }, [handleMouseMove])
 
   return (
     <canvas
-      {...commonProps}
-      onMouseEnter={e => {
-        const pos = getRelativePos(e)
-        lastPosRef.current = pos
-        stampAlong(pos.x, pos.y)
-        startLoop()
-      }}
-      onMouseMove={e => {
-        const pos = getRelativePos(e)
-        stampAlong(pos.x, pos.y)
-        startLoop()
-      }}
-      onMouseLeave={() => {
-        lastPosRef.current = null
+      ref={canvasRef}
+      className={className}
+      style={{
+        position: "absolute",
+        inset: 0,
+        zIndex: 1,
+        pointerEvents: "none",
+        cursor: mode === "reveal" ? undefined : "none",
+        ...style
       }}
     />
   )

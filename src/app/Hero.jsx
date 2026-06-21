@@ -9,6 +9,7 @@ import Glow from "@/components/Glow";
 import { HeroPill, StarIcon } from "@/components/HeroPill"
 import InkReveal from "@/components/ui/ink-reveal";
 import TechGridBackground from "@/components/ui/tech-grid-background";
+import TechOrbit from "@/components/ui/tech-orbit";
 
 
 export default function Hero() {
@@ -89,15 +90,15 @@ export default function Hero() {
         -bottom-0
         right-0 
         w-full 
-        h-[40dvh] 
+        h-[35dvh] 
         flex 
         justify-center      /* MOBILE: CENTER IMAGE */
         items-end 
-        z-200
-
-        md:h-[70dvh]
-        md:justify-end       /* DESKTOP: SHIFT RIGHT */
+        z-20
+        md:h-[50dvh]
+        md:justify-end       /* TABLET+: SHIFT RIGHT */
         md:pr-[5%]
+        lg:h-[70dvh]
     ">
                 <img
                     src="/me2.png"
@@ -107,11 +108,13 @@ export default function Hero() {
                 w-auto 
                 h-full 
                 object-contain
-                max-h-[40dvh] 
-                md:max-h-[70dvh]
-                outline outline-1 outline-black/10 dark:outline-white/10
+                max-h-[35dvh] 
+                md:max-h-[50dvh]
+                lg:max-h-[70dvh]
+                
             "
                 />
+              
             </div>
             {/* </ParallaxLayer> */}
             {/* <ParallaxLayer className="z-[0]" speed={0} offset={0.2}> */}
@@ -136,9 +139,9 @@ export default function Hero() {
 
             <InkReveal
                 mode="reveal"
-                maskColor={theme === "dark" ? [0, 0, 0] : [255, 255, 255]}
-                brushSize={300}
-                stampStep={6}
+                maskColor={theme === "dark" ? [10, 10, 10] : [255, 255, 255]}
+                brushSize={100}
+                stampStep={2}
                 style={{ zIndex: 5 }}
             />
         </section>
