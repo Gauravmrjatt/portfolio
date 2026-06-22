@@ -536,22 +536,9 @@ export default function App() {
                 firstOccurrence.set(card.id, bestCellIndex)
             }
             cardIndex++
-            continue
+        } else {
+            cardIndex++
         }
-
-        // Fallback: place in any unoccupied inside cell
-        for (const cell of sortedCells) {
-            if (!cell.inside || cell.ring === 0) continue
-            if (cardMap.has(cell.index)) continue
-            const card = allCards[cardIndex]
-            cardMap.set(cell.index, card)
-            placedTypeAt[cell.index] = card.typeIndex
-            if (!firstOccurrence.has(card.id)) {
-                firstOccurrence.set(card.id, cell.index)
-            }
-            break
-        }
-        cardIndex++
     }
 
     const snapToCenter = (index, cardId = null) => {

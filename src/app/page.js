@@ -74,7 +74,6 @@ export default function Home() {
         <LazySection>
 
           <ProjextGalery/>
-          {/* <Projects /> */}
         </LazySection>
 
         {/* education */}

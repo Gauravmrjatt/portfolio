@@ -239,8 +239,83 @@ const projects = [
   span: "lg:col-span-5",
   background:
     "bg-gradient-to-br from-white to-black/20 dark:from-white/30 dark:to-transparent",
-}
-
+},
+  {
+    title: "Cashbackwallah",
+    icon: "skill-icons:nextjs-dark",
+    description:
+      "Logistics and shipping management platform for Indian e-commerce businesses. Compare rates across 25+ carrier partners, book shipments, track in real-time, and manage wallet payments. Features a franchise referral network with commission-based earnings and a comprehensive admin dashboard.",
+    link: "https://cashbackwallah.com/",
+    cta: "Visit Platform",
+    techStack: [
+      "skill-icons:nextjs-dark",
+      "skill-icons:react-dark",
+      "devicon:typescript",
+      "devicon:tailwindcss",
+      "simple-icons:prisma",
+      "logos:postgresql",
+      "skill-icons:expressjs-dark",
+      "simple-icons:razorpay",
+      "devicon:redis",
+      "simple-icons:bullmq",
+      "logos:socket-io",
+      "logos:docker-icon",
+      "simple-icons:zustand",
+      "simple-icons:reactquery",
+      "simple-icons:shadcnui",
+      "simple-icons:sentry",
+    ],
+    span: "lg:col-span-7",
+    background:
+      "bg-gradient-to-br from-white to-black/20 dark:from-white/30 dark:to-transparent",
+  },
+  {
+    title: "KanSpark",
+    icon: "skill-icons:nextjs-dark",
+    description:
+      "Real-time collaborative Kanban project management application. Organize work visually with drag-and-drop boards, lists, and cards. Features team collaboration with role-based permissions, real-time updates via Socket.IO, and dual Kanban and list view modes.",
+    link: "https://kanspark-ruddy.vercel.app/",
+    cta: "View Board",
+    techStack: [
+      "skill-icons:nextjs-dark",
+      "skill-icons:react-dark",
+      "devicon:typescript",
+      "devicon:tailwindcss",
+      "simple-icons:mantine",
+      "skill-icons:expressjs-dark",
+      "logos:mongodb-icon",
+      "logos:socket-io",
+      "logos:jwt-icon",
+      "logos:docker-icon",
+      "simple-icons:reactquery",
+    ],
+    span: "lg:col-span-7",
+    background:
+      "bg-gradient-to-br from-white to-black/20 dark:from-white/30 dark:to-transparent",
+  },
+  {
+    title: "NEETCounselors",
+    icon: "skill-icons:nextjs-dark",
+    description:
+      "India's trusted NEET counselling guidance platform. AI-powered college predictor for rank-based medical college recommendations, structured counselling plans (Essential, Premium, Elite Concierge) with 1-on-1 video consultations, comprehensive blog on NEET procedures, state-wise cutoff analysis, live counselor booking, and 12x7 support.",
+    link: "https://neetcounselors.com/",
+    cta: "Explore Platform",
+    techStack: [
+      "skill-icons:nextjs-dark",
+      "skill-icons:react-dark",
+      "devicon:typescript",
+      "devicon:tailwindcss",
+      "simple-icons:payloadcms",
+      "logos:mongodb-icon",
+      "simple-icons:razorpay",
+      "simple-icons:radixui",
+      "logos:docker-icon",
+      "simple-icons:cloudflare",
+    ],
+    span: "lg:col-span-5",
+    background:
+      "bg-gradient-to-br from-white to-black/20 dark:from-white/30 dark:to-transparent",
+  },
 ];
 
 export default function Projects() {
