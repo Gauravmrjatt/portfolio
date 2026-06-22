@@ -7,12 +7,15 @@ import AboutMe from "./About";
 import Footer from "./Footer";
 import EducationTimeline from "./Education";
 import Achievements from "./Achievements";
+import Testimonials from "./Testimonials";
+import Stats from "./Stats";
 import Dock from "./DockBar";
 import { ScrollSpy , ActiveSectionProvider} from '@/components/Dock';
 
 const TechStackSection = dynamic(() => import("./TechStack"), { ssr: false });
 const ProjextGalery = dynamic(() => import("@/components/ProjectGalery"), { ssr: false });
 const DownloadResume = dynamic(() => import("./DownloadResume"), { ssr: false });
+
 export default function Home() {
   return (
     <ActiveSectionProvider>
@@ -69,6 +72,7 @@ export default function Home() {
         </LazySection>
         {/* projects */}
         <LazySection>
+
           <ProjextGalery/>
           {/* <Projects /> */}
         </LazySection>
@@ -81,6 +85,16 @@ export default function Home() {
         {/* achievements */}
         <LazySection>
           <Achievements />
+        </LazySection>
+
+        {/* testimonials */}
+        <LazySection>
+          <Testimonials />
+        </LazySection>
+
+        {/* coding stats */}
+        <LazySection>
+          <Stats />
         </LazySection>
 
         {/* download resume */}

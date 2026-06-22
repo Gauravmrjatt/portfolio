@@ -9,12 +9,25 @@ import Glow from "@/components/Glow";
 import { HeroPill, StarIcon } from "@/components/HeroPill"
 import InkReveal from "@/components/ui/ink-reveal";
 import TechGridBackground from "@/components/ui/tech-grid-background";
-import TechOrbit from "@/components/ui/tech-orbit";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 
 export default function Hero() {
     const { theme } = useTheme()
+    const [gridSize, setGridSize] = useState({ cols: 28, rows: 20 })
+    useEffect(() => {
+      const update = () => {
+        const w = window.innerWidth
+        if (w < 768) setGridSize({ cols: 12, rows: 10 })
+        else if (w < 1024) setGridSize({ cols: 18, rows: 14 })
+        else setGridSize({ cols: 28, rows: 20 })
+      }
+      update()
+      window.addEventListener("resize", update)
+      return () => window.removeEventListener("resize", update)
+    }, [])
     return (<>
         {/* <ParallaxScroll> */}
         <section id="home" className="relative overflow-hidden flex min-h-dvh bg-background flex-col md:flex-col snap-start z-[50] ">
@@ -136,6 +149,8 @@ export default function Hero() {
             {/* </ParallaxLayer> */}
 
             <TechGridBackground
+                cols={gridSize.cols}
+                rows={gridSize.rows}
                 density={0.5}
                 opacityProp={0.25}
                 className="absolute inset-0"
@@ -145,8 +160,8 @@ export default function Hero() {
             <InkReveal
                 mode="reveal"
                 maskColor={theme === "dark" ? [10, 10, 10] : [255, 255, 255]}
-                brushSize={100}
-                stampStep={2}
+                brushSize={190}
+                stampStep={5}
                 style={{ zIndex: 5 }}
             />
         </section>

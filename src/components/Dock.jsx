@@ -17,7 +17,7 @@ import {
   useRef,
   useState
 } from "react"
-import { Home, Code, FolderKanban, Trophy, Mail, Moon, Sun } from "lucide-react"
+import { Home, Code, FolderKanban, Trophy, BarChart3, Mail, Moon, Sun } from "lucide-react"
 
 const DOCK_HEIGHT = 128
 const DEFAULT_MAGNIFICATION = 80
@@ -230,7 +230,7 @@ export const ScrollSpy = () => {
   const lastActiveRef = useRef("home")
 
   useEffect(() => {
-    const sectionIds = ["home", "skills", "projects", "achievements", "contact"]
+    const sectionIds = ["home", "skills", "projects", "achievements", "stats", "contact"]
 
     const findActiveSection = () => {
       const scrollY = window.scrollY

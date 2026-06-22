@@ -44,11 +44,9 @@ function shuffle(arr, rand) {
   return arr
 }
 
-export default function TechGridBackground({ density = 0.55, opacityProp = 1.12, className, style }) {
+export default function TechGridBackground({ density = 0.55, opacityProp = 0.12, cols = 28, rows = 20, className, style }) {
   const items = useMemo(() => {
     const rand = seededRandom(42)
-    const cols = 28
-    const rows = 20
     const total = Math.floor(cols * rows * density)
 
     const positions = Array.from({ length: cols * rows }, (_, i) => i)
@@ -69,7 +67,7 @@ export default function TechGridBackground({ density = 0.55, opacityProp = 1.12,
 
       return { cx, cy, rotation, size, icon, floatDuration, delay, floatY }
     })
-  }, [density])
+  }, [density, cols, rows])
 
   return (
     <div
