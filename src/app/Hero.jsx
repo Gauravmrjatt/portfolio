@@ -18,20 +18,20 @@ export default function Hero() {
     const { theme } = useTheme()
     const [gridSize, setGridSize] = useState({ cols: 28, rows: 20 })
     useEffect(() => {
-      const update = () => {
-        const w = window.innerWidth
-        if (w < 768) setGridSize({ cols: 12, rows: 10 })
-        else if (w < 1024) setGridSize({ cols: 18, rows: 14 })
-        else setGridSize({ cols: 28, rows: 20 })
-      }
-      update()
-      window.addEventListener("resize", update)
-      return () => window.removeEventListener("resize", update)
+        const update = () => {
+            const w = window.innerWidth
+            if (w < 768) setGridSize({ cols: 12, rows: 10 })
+            else if (w < 1024) setGridSize({ cols: 18, rows: 14 })
+            else setGridSize({ cols: 28, rows: 20 })
+        }
+        update()
+        window.addEventListener("resize", update)
+        return () => window.removeEventListener("resize", update)
     }, [])
     return (<>
         {/* <ParallaxScroll> */}
         <section id="home" className="relative overflow-hidden flex min-h-dvh bg-background flex-col md:flex-col snap-start z-[50] ">
-        
+
             {/* TEXT — CENTERED (shifted slightly left on desktop) */}
             <div
                 className="
@@ -69,11 +69,11 @@ export default function Hero() {
                     {/* </TextAnimate> */}
                 </span>
 
-               <h1 className="dancing md:text-9xl mt-4  text-6xl text-balance">
+                <h1 className="dancing md:text-9xl mt-4  text-6xl text-balance">
                     <TextAnimate
                         by="character"
                         className="font-medium dancing font-dancing dancing md:text-9xl text-6xl">
-                        Gaurav 
+                        Gaurav
                     </TextAnimate>
                 </h1>
                 <h1 className="dancing  md:text-9xl  mb-4 text-6xl">
@@ -98,41 +98,39 @@ export default function Hero() {
             </div>
 
             {/* IMAGE — MOBILE CENTERED, DESKTOP BOTTOM-RIGHT */}
-            <div
+            {/**./ */}   <div
                 className="
         absolute 
         -bottom-0
         right-0 
         w-full 
-        h-[35dvh] 
+        h-[50dvh] 
         flex 
         justify-center      /* MOBILE: CENTER IMAGE */
         items-end 
-        z-20
-        md:h-[50dvh]
+        z-200
+        md:h-[70dvh]
         md:justify-end       /* TABLET+: SHIFT RIGHT */
         md:pr-[5%]
-        lg:h-[70dvh]
+        lg:h-[100dvh]
     ">
-                <Image
-                    src="/gaurav-chaudhary-hero.png"
+              <Image
+                    src="/gauravmrjatt5.png"
                     alt="Gaurav Chaudhary — Full-Stack Developer"
-                    width={500}
-                    height={700}
-                    priority
+                    width={10000}
+                    height={10000}
+                    priority={true}
                     className="
                 pointer-events-none 
                 select-none 
                 w-auto 
                 h-full 
                 object-contain
-                max-h-[35dvh] 
-                md:max-h-[50dvh]
-                lg:max-h-[70dvh]
-                
+                transform translate-y-[5dvh] md:translate-y-[20dvh] 
+                border border-zinc-900/300 dark:border-white/300 scale-130 md:scale-100
             "
-                />b
-              
+                />
+
             </div>
             {/* </ParallaxLayer> */}
             {/* <ParallaxLayer className="z-[0]" speed={0} offset={0.2}> */}

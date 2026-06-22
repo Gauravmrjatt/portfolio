@@ -90,13 +90,15 @@ export default function AboutMe() {
               overflow-hidden bg-background/50
             "
                     >
-                        <Image
-                            src="/gaurav-chaudhary-hero.png"
-                            alt="Gaurav Chaudhary — Full-Stack Developer from Mathura, India"
+                        <img alt="Gaurav Chaudhary — Full-Stack Developer from Mathura, India"
                             width={240}
                             height={240}
-                            className="rounded-2xl aspect-square object-cover max-w-[240px] w-full outline outline-1 outline-black/10 dark:outline-white/10"
-                        />
+                            className="rounded-full aspect-square object-cover max-w-[240px] w-full outline outline-1 outline-black/10 dark:outline-white/10"
+
+                            fetchPriority="high" 
+                            sizes="(min-width: 1440px) 33vw, (min-width: 1024px) 50vw, 100vw" 
+                            srcSet="https://media.licdn.com/dms/image/v2/D5603AQG7slcB9eeMsA/profile-displayphoto-scale_100_100/B56Z3uKOOxIIAg-/0/1777817153091?e=1783555200&amp;v=beta&amp;t=owQAoHKMAiI2aoaWxDsarkfwmYhKRDfWvjJt_565VrY 100w, https://media.licdn.com/dms/image/v2/D5603AQG7slcB9eeMsA/profile-displayphoto-scale_200_200/B56Z3uKOOxIIAc-/0/1777817153091?e=1783555200&amp;v=beta&amp;t=gQalWBTCnIv9Bojp_fOJowtVWjf4aJKTWQ7Xe9c2enA 200w, https://media.licdn.com/dms/image/v2/D5603AQG7slcB9eeMsA/profile-displayphoto-scale_400_400/B56Z3uKOOxIIAk-/0/1777817153092?e=1783555200&amp;v=beta&amp;t=ez3EJPgQS-vQYDdOeijXeuGJRY4K8tnh1ekX57X3qjo 400w, https://media.licdn.com/dms/image/v2/D5603AQG7slcB9eeMsA/profile-displayphoto-crop_800_800/B56Z3uKOOxIIAM-/0/1777817153001?e=1783555200&amp;v=beta&amp;t=NlYg4-JR0iyFxksu9zV1KT9em07f_S0rHcrb5cZwaRk 800w" src="https://media.licdn.com/dms/image/v2/D5603AQG7slcB9eeMsA/profile-displayphoto-scale_100_100/B56Z3uKOOxIIAg-/0/1777817153091?e=1783555200&amp;v=beta&amp;t=owQAoHKMAiI2aoaWxDsarkfwmYhKRDfWvjJt_565VrY"
+                             data-loaded="true" />
 
                         <h2 className="text-3xl font-bold mt-6">Gaurav</h2>
                         <p className="text-muted-foreground">Full-Stack Developer</p>
