@@ -87,12 +87,14 @@ export default function Hero() {
                     </TextAnimation>
                 </h1>
                 <span className="mt-5 font-sans">
-                    <TextAnimate animation="slideLeft" by="character" className="text-pretty">
+                    <TextAnimate animation="slideLeft" by="character" className="text-pretty md:ml-7 text-background-accent">
                         I'm a full-stack web-developer from India
                     </TextAnimate>
 
                     <div className="mt-6 mb-4 pb-[30px]">
-                        <GlassIcons items={items} className="custom-class" />
+                        <div className="p-1 bg-muted/50 border border-muted relative rounded-full">
+                            <GlassIcons items={items} className="" />
+                        </div>
                     </div>
                 </span>
             </div>
@@ -114,7 +116,7 @@ export default function Hero() {
         md:pr-[5%]
         lg:h-[100dvh]
     ">
-              <Image
+                <Image
                     src="/gauravmrjatt5.png"
                     alt="Gaurav Chaudhary — Full-Stack Developer"
                     width={10000}
@@ -163,7 +165,7 @@ export default function Hero() {
                 stampStep={5}
                 style={{ zIndex: 5 }}
             />
-            
+
         </section>
         {/* </ParallaxScroll> */}
 

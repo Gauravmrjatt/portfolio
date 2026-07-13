@@ -4,11 +4,15 @@ import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { Github, Gitlab, MapPin } from "lucide-react";
 import Glow from "@/components/Glow";
-import Image from "next/image";
 import Grainient from "@/components/Grainient";
 import { CylinderCarousel } from "@/components/motion/cylinder-carousel";
 import { Icon } from "@iconify/react";
+import { NumberTicker } from "@/components/motion/number-ticker";
 
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
+
+import GlassIcons from "@/components/magicui/GlassIcon";
+import items from "./items"
 const stats = [
     { value: "4+", label: "Years Experience" },
     { value: "100+", label: "Problems Solved" },
@@ -160,13 +164,21 @@ export function About() {
                         >
                             {stats.map((stat) => (
                                 <div key={stat.label}>
-                                    <div className="text-4xl font-bold tabular-nums">{stat.value}</div>
+                                    <div className="text-4xl font-bold tabular-nums">
+                                        <NumberTicker
+                                            value={stat.value}
+                                            prefix=""
+                                            className="text-4xl font-semibold tracking-tight text-foreground tabular-nums"
+                                            format={(n) => n.toLocaleString()}
+                                        />
+                                    </div>
                                     <div className="text-sm text-muted-foreground mt-1">
                                         {stat.label}
                                     </div>
                                 </div>
                             ))}
                         </motion.div>
+
                     </div>
                 </div>
 
@@ -215,15 +227,79 @@ export default function AboutMe() {
     return (
         <section
             id="about"
-            className="relative min-h-screen bg-background/50 px-4 py-20 overflow-x-hidden flex justify-center "
+            className="relative min-h-screen bg-background/50 px-4 py-20 overflow-x-hidden flex justify-center gap-3"
         >
-            <div className="flex-1"></div>
+            <div className="flex-1">
+                <div className="lg:col-span-8  grid grid-cols-1 gap-6 overflow-hidden">
+                    {/* About */}
+                    <div className="p-1 bg-muted rounded-3xl ">
+                        <motion.div
+                            variants={card}
+                            className="
+                 rounded-3xl p-8 sm:p-10
+                flex flex-col justify-center
+                text-center lg:text-left
+                bg-background
+                min-h-[260px]
+                overflow-hidden
+                border border-border/50
+              "
+                        >
+                            <h3 className="text-3xl font-bold mb-6 text-balance">About Me</h3>
+                            <p className="text-base sm:text-lg text-muted-foreground text-pretty leading-relaxed max-w-full">
+                                I’m a passionate Full-Stack Developer who enjoys building scalable,
+                                performant, and pixel-perfect web experiences. I specialize in
+                                MERN, LAMP, Next.js, and backend-focused systems.
+                            </p>
+                            <p className="text-base sm:text-lg text-muted-foreground text-pretty leading-relaxed max-w-full mt-4">
+                                Over the past 4+ years, I&apos;ve built real-time collaborative platforms,
+                                reward distribution systems serving thousands of users, and
+                                competitive quiz applications with live leaderboards. I focus on
+                                writing clean, maintainable code and designing systems that scale.
+                            </p>
+                        </motion.div>
+                    </div>
+                    {/* Stats */}
+                    <div className="p-1 bg-muted rounded-3xl ">
+                        <motion.div
+                            variants={card}
+                            className="
+                border border-border/50 rounded-3xl p-8
+                grid grid-cols-1 sm:grid-cols-3 gap-6
+                text-center
+                overflow-hidden
+                bg-background
+              "
+                        >
+                            {stats.map((stat) => (
+                                <div key={stat.label}>
+                                    <div className="text-4xl font-bold tabular-nums">{stat.value}</div>
+                                    <div className="text-sm text-muted-foreground mt-1">
+                                        {stat.label}
+                                    </div>
+                                </div>
+                            ))}
+                        </motion.div>
+                    </div>
+
+                    <div className="flex justify-center items-center w-full h-full">
+                        <div className="absolute flex items-center justify-center bottom-0">
+                            <TextHoverEffect text="HIRE ME" />
+                        </div>
+                    </div>
+                    <div>
+                        <button className="relative flex items-center gap-3 overflow-hidden rounded-full border px-6 py-3 transition-all duration-500 sm:px-8 sm:py-4">Hire Me</button>
+                        <button className="relative flex items-center gap-3 overflow-hidden rounded-full border px-6 py-3 transition-all duration-500 sm:px-8 sm:py-4">View Resume</button>
+                        <button className="relative flex items-center gap-3 overflow-hidden rounded-full border px-6 py-3 transition-all duration-500 sm:px-8 sm:py-4">Download Resume</button>
+                    </div>
+                </div>
+            </div>
             <div className="flex-1 relative rounded-3xl overflow-hidden">
                 <div className="z-10 flex gap-5 flex-col justify-center items-center h-full relative">
                     <div className="p-2 bg-background/30 rounded-3xl border border-border/30 w-[50%]">
                         <motion.div
                             variants={card}
-                            className="lg:col-span-4 border border-border rounded-2xl p-8 flex flex-col items-center justify-center text-center overflow-hidden bg-background/70 w-[100%]">
+                            className="lg:col-span-4 rounded-b-none border border-border rounded-2xl p-8 flex flex-col items-center justify-center text-center overflow-hidden bg-background/70 w-[100%]">
                             <img alt="Gaurav Chaudhary — Full-Stack Developer from Mathura, India"
                                 width={200}
                                 height={200}
@@ -237,11 +313,13 @@ export default function AboutMe() {
                                 <MapPin className="h-4 w-4 shrink-0" />
                                 <span className="text-sm">Mathura, India</span>
                             </div>
-                            <div className="flex gap-6 mt-5">
-                                <Github className="h-6 w-6 hover:scale-125 transition-transform active:scale-[0.96]" />
-                                <Gitlab className="h-6 w-6 hover:scale-125 transition-transform active:scale-[0.96]" />
-                            </div>
+
                         </motion.div>
+                        <div className="">
+
+                            <GlassIcons items={items} className="px-5 rounded-3xl bg-background/70 mt-0 rounded-t-none" />
+
+                        </div>
                     </div>
                     <motion.div
                         variants={card}
@@ -253,18 +331,18 @@ export default function AboutMe() {
                             variant="convex"
                             snap
                             autoRotate
-                            autoRotateSpeed={0.3}
+                            autoRotateSpeed={.5}
                             className="w-full h-full pt-6"
                         >
                             {skills.map((skill) => (
                                 <div className="inline-block p-1.5 h-full w-full bg-background/50 rounded-full  items-center justify-center text-xs sm:text-sm font-medium">
-                                <div
-                                    key={skill.name}
-                                    className="w-full h-full rounded-full bg-muted/90 flex flex-col items-center justify-center text-xs sm:text-sm font-medium px-3 p-4"
-                                >
-                                    <Icon icon={skill.icon} className="w-[60%] h-[60%] shrink-0" />
-                                    {/* <p className="text-xs">{skill.name}</p> */}
-                                </div>
+                                    <div
+                                        key={skill.name}
+                                        className="w-full h-full rounded-full bg-muted/90 flex flex-col items-center justify-center text-xs sm:text-sm font-medium px-3 p-4"
+                                    >
+                                        <Icon icon={skill.icon} className="w-[60%] h-[60%] shrink-0" />
+                                        {/* <p className="text-xs">{skill.name}</p> */}
+                                    </div>
                                 </div>
                             ))}
                         </CylinderCarousel>
