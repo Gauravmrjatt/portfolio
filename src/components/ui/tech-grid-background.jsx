@@ -82,7 +82,7 @@ export default function TechGridBackground({ density = 0.55, opacityProp = 0.12,
             left: `${item.cx}%`,
             top: `${item.cy}%`,
             transform: `rotate(${item.rotation}deg)`,
-            opacity: ".7",
+            opacity: ".3",
             willChange: "translate",
             // "--float-to": `${item.floatY}px`,
             // animation: `tech-float ${item.floatDuration}s ease-in-out ${item.delay}s infinite alternate`

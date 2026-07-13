@@ -108,7 +108,7 @@ export default function Hero() {
         flex 
         justify-center      /* MOBILE: CENTER IMAGE */
         items-end 
-        z-200
+        z-25
         md:h-[70dvh]
         md:justify-end       /* TABLET+: SHIFT RIGHT */
         md:pr-[5%]
@@ -158,10 +158,12 @@ export default function Hero() {
             <InkReveal
                 mode="reveal"
                 maskColor={theme === "dark" ? [10, 10, 10] : [255, 255, 255]}
+                inkColor={theme === "dark" ? [255, 255, 255] : [10, 10, 10]}
                 brushSize={190}
                 stampStep={5}
                 style={{ zIndex: 5 }}
             />
+            
         </section>
         {/* </ParallaxScroll> */}
 

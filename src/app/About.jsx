@@ -5,6 +5,10 @@ import { useInView } from "react-intersection-observer";
 import { Github, Gitlab, MapPin } from "lucide-react";
 import Glow from "@/components/Glow";
 import Image from "next/image";
+import Grainient from "@/components/Grainient";
+import { CylinderCarousel } from "@/components/motion/cylinder-carousel";
+import { Icon } from "@iconify/react";
+
 const stats = [
     { value: "4+", label: "Years Experience" },
     { value: "100+", label: "Problems Solved" },
@@ -12,14 +16,14 @@ const stats = [
 ];
 
 const skills = [
-    "MERN Stack",
-    "LAMP Stack",
-    "Next.js",
-    "Docker",
-    "PostgreSQL",
-    "Redis",
-    "TypeScript",
-    "Tailwind CSS",
+    { name: "MERN Stack", icon: "logos:react" },
+    { name: "LAMP Stack", icon: "logos:php" },
+    { name: "Next.js", icon: "logos:nextjs-icon" },
+    { name: "Docker", icon: "skill-icons:docker" },
+    { name: "PostgreSQL", icon: "logos:postgresql" },
+    { name: "Redis", icon: "devicon:redis" },
+    { name: "TypeScript", icon: "skill-icons:typescript" },
+    { name: "Tailwind CSS", icon: "skill-icons:tailwindcss-dark" },
 ];
 
 const container = {
@@ -42,7 +46,7 @@ const card = {
     },
 };
 
-export default function AboutMe() {
+export function About() {
     const [ref, inView] = useInView({
         threshold: 0.1,
         triggerOnce: true,
@@ -53,6 +57,7 @@ export default function AboutMe() {
             id="about"
             className="relative min-h-screen bg-background/50 px-4 py-20 overflow-x-hidden flex justify-center items-center"
         >
+
             {/* Background Glow */}
             <div className="
   fixed 
@@ -95,10 +100,10 @@ export default function AboutMe() {
                             height={240}
                             className="rounded-full aspect-square object-cover max-w-[240px] w-full outline outline-1 outline-black/10 dark:outline-white/10"
 
-                            fetchPriority="high" 
-                            sizes="(min-width: 1440px) 33vw, (min-width: 1024px) 50vw, 100vw" 
+                            fetchPriority="high"
+                            sizes="(min-width: 1440px) 33vw, (min-width: 1024px) 50vw, 100vw"
                             srcSet="https://media.licdn.com/dms/image/v2/D5603AQG7slcB9eeMsA/profile-displayphoto-scale_100_100/B56Z3uKOOxIIAg-/0/1777817153091?e=1783555200&amp;v=beta&amp;t=owQAoHKMAiI2aoaWxDsarkfwmYhKRDfWvjJt_565VrY 100w, https://media.licdn.com/dms/image/v2/D5603AQG7slcB9eeMsA/profile-displayphoto-scale_200_200/B56Z3uKOOxIIAc-/0/1777817153091?e=1783555200&amp;v=beta&amp;t=gQalWBTCnIv9Bojp_fOJowtVWjf4aJKTWQ7Xe9c2enA 200w, https://media.licdn.com/dms/image/v2/D5603AQG7slcB9eeMsA/profile-displayphoto-scale_400_400/B56Z3uKOOxIIAk-/0/1777817153092?e=1783555200&amp;v=beta&amp;t=ez3EJPgQS-vQYDdOeijXeuGJRY4K8tnh1ekX57X3qjo 400w, https://media.licdn.com/dms/image/v2/D5603AQG7slcB9eeMsA/profile-displayphoto-crop_800_800/B56Z3uKOOxIIAM-/0/1777817153001?e=1783555200&amp;v=beta&amp;t=NlYg4-JR0iyFxksu9zV1KT9em07f_S0rHcrb5cZwaRk 800w" src="https://media.licdn.com/dms/image/v2/D5603AQG7slcB9eeMsA/profile-displayphoto-scale_100_100/B56Z3uKOOxIIAg-/0/1777817153091?e=1783555200&amp;v=beta&amp;t=owQAoHKMAiI2aoaWxDsarkfwmYhKRDfWvjJt_565VrY"
-                             data-loaded="true" />
+                            data-loaded="true" />
 
                         <h2 className="text-3xl font-bold mt-6">Gaurav</h2>
                         <p className="text-muted-foreground">Full-Stack Developer</p>
@@ -184,22 +189,115 @@ export default function AboutMe() {
                     >
                         {skills.map((skill) => (
                             <motion.span
-                                key={skill}
+                                key={skill.name}
                                 whileHover={{ scale: 1.08, y: -2 }}
                                 className="
-                  px-3 py-1.5 sm:px-6 sm:py-3
-                  rounded-full bg-muted
-                  text-xs sm:text-sm font-medium
-                  whitespace-nowrap
-                  max-w-full
-                "
+                   px-3 py-1.5 sm:px-6 sm:py-3
+                   rounded-full bg-muted
+                   text-xs sm:text-sm font-medium
+                   whitespace-nowrap
+                   max-w-full
+                   inline-flex items-center gap-2
+                 "
                             >
-                                {skill}
+                                <Icon icon={skill.icon} className="w-4 h-4 shrink-0" />
+                                {skill.name}
                             </motion.span>
                         ))}
                     </div>
                 </motion.div>
             </motion.div>
+        </section>
+    );
+}
+
+export default function AboutMe() {
+    return (
+        <section
+            id="about"
+            className="relative min-h-screen bg-background/50 px-4 py-20 overflow-x-hidden flex justify-center "
+        >
+            <div className="flex-1"></div>
+            <div className="flex-1 relative rounded-3xl overflow-hidden">
+                <div className="z-10 flex gap-5 flex-col justify-center items-center h-full relative">
+                    <div className="p-2 bg-background/30 rounded-3xl border border-border/30 w-[50%]">
+                        <motion.div
+                            variants={card}
+                            className="lg:col-span-4 border border-border rounded-2xl p-8 flex flex-col items-center justify-center text-center overflow-hidden bg-background/70 w-[100%]">
+                            <img alt="Gaurav Chaudhary — Full-Stack Developer from Mathura, India"
+                                width={200}
+                                height={200}
+                                className="rounded-full aspect-square object-cover max-w-[240px]"
+                                fetchPriority="high"
+                                srcSet="/me.jpeg"
+                                data-loaded="true" />
+                            <h2 className="text-3xl font-bold mt-6">Gaurav Chaudhary</h2>
+                            <p className="text-muted-foreground">Full-Stack Developer</p>
+                            <div className="flex items-center gap-2 text-muted-foreground mt-3">
+                                <MapPin className="h-4 w-4 shrink-0" />
+                                <span className="text-sm">Mathura, India</span>
+                            </div>
+                            <div className="flex gap-6 mt-5">
+                                <Github className="h-6 w-6 hover:scale-125 transition-transform active:scale-[0.96]" />
+                                <Gitlab className="h-6 w-6 hover:scale-125 transition-transform active:scale-[0.96]" />
+                            </div>
+                        </motion.div>
+                    </div>
+                    <motion.div
+                        variants={card}
+                        className="absolute w-full bottom-0 "
+                    >
+                        <CylinderCarousel
+                            itemSize={120}
+                            visibleItems={5}
+                            variant="convex"
+                            snap
+                            autoRotate
+                            autoRotateSpeed={0.3}
+                            className="w-full h-full pt-6"
+                        >
+                            {skills.map((skill) => (
+                                <div className="inline-block p-1.5 h-full w-full bg-background/50 rounded-full  items-center justify-center text-xs sm:text-sm font-medium">
+                                <div
+                                    key={skill.name}
+                                    className="w-full h-full rounded-full bg-muted/90 flex flex-col items-center justify-center text-xs sm:text-sm font-medium px-3 p-4"
+                                >
+                                    <Icon icon={skill.icon} className="w-[60%] h-[60%] shrink-0" />
+                                    {/* <p className="text-xs">{skill.name}</p> */}
+                                </div>
+                                </div>
+                            ))}
+                        </CylinderCarousel>
+                    </motion.div>
+                </div>
+
+                <div className="absolute inset-0 rounded-3xl  z-1">
+                    <Grainient
+                        color1="#FF9FFC"
+                        color2="#5227FF"
+                        color3="#B497CF"
+                        timeSpeed={0.25}
+                        colorBalance={0}
+                        warpStrength={1}
+                        warpFrequency={5}
+                        warpSpeed={2}
+                        warpAmplitude={50}
+                        blendAngle={0}
+                        blendSoftness={0.05}
+                        rotationAmount={500}
+                        noiseScale={2}
+                        grainAmount={0.1}
+                        grainScale={2}
+                        grainAnimated={false}
+                        contrast={1.5}
+                        gamma={1}
+                        saturation={1}
+                        centerX={0}
+                        centerY={0}
+                        zoom={0.9}
+                    />
+                </div>
+            </div>
         </section>
     );
 }

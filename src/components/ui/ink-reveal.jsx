@@ -73,7 +73,7 @@ export default function InkReveal({
       for (let i = 0; i <= segments; i++) {
         const a = (i / segments) * Math.PI * 2
         const wob =
-          0.78 +
+          1 +
           wobble[0] * Math.sin(a * 3 + seed) +
           wobble[1] * Math.sin(a * 5 + seed * 2.1) +
           wobble[2] * Math.sin(a * 7 + seed * 0.7)
