@@ -7,14 +7,14 @@ const educationItems = [
   {
     id: 1,
     status: "completed",
-    title: "10th Grade (Secondary School)",
+    title: "Secondary School",
     date: "March 2020",
     icon: <School className="h-4 w-4" />,
   },
   {
     id: 2,
     status: "completed",
-    title: "12th Grade (Higher Secondary)",
+    title: "Higher Secondary",
     date: "March 2022",
     icon: <BookOpen className="h-4 w-4" />,
   },
@@ -144,15 +144,15 @@ const EducationZigZagTimeline = () => {
         {educationItems.map((item, index) => (
           <div
             key={item.id}
-            className={`flex ${
+            className={`flex bg-mu ${
               index % 2 === 0 ? "justify-start" : "justify-end"
             } max-sm:justify-center`}
           >
             <div
               ref={(el) => (cardRefs.current[index] = el)}
-              className="w-72 rounded-xl border border-border bg-background p-6 shadow-sm dark:shadow-none"
+              className="w-72 rounded-xl border border-border/40 bg-background p-1"
             >
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 bg-muted/70 p-5 rounded-xl">
                 <div
                   className={`flex h-8 w-8 items-center justify-center rounded-full ring-1 ring-border ${
                     item.status === "in-progress"
