@@ -228,7 +228,7 @@ export default function AboutMe() {
     return (
         <section
             id="about"
-            className="relative min-h-screen bg-background/50 flex-col lg:flex-row px-4 py-20 overflow-x-hidden flex justify-center gap-3"
+            className="relative min-h-screen bg-background/50 flex-col-reverse lg:flex-row px-4 py-20 overflow-x-hidden flex justify-center gap-3"
         >
             <div className="flex-1">
                 <div className="lg:col-span-8  grid grid-cols-1 gap-6 overflow-hidden">
@@ -286,7 +286,7 @@ export default function AboutMe() {
                     <div className="">
                         <div className="relative z-10 flex flex-col items-center gap-6">
                             <TextHoverEffect text="RESUME" />
-                            <div className="flex flex-wrap justify-center gap-4 bg-muted p-1 rounded-full border border-border/40">
+                            <div className="flex flex-wrap justify-center gap-4 bg-muted p-1 rounded-2xl md:rounded-full border border-border/40">
                                 <Link href="https://www.linkedin.com/in/gauravmrjatt/" target="_blank" rel="noopener noreferrer">
                                     <MagneticButton className=" border-0" variant="primary" size="lg">
                                         <Icon icon="mdi:hand-wave" className="w-5 h-5" />
@@ -310,9 +310,9 @@ export default function AboutMe() {
                     </div>
                 </div>
             </div>
-            <div className="flex-1 relative rounded-3xl overflow-hidden min-h-[calc(max(900px,80dvh))]">
-                <div className="z-10 flex gap-5 flex-col justify-center items-center h-full min-h-[calc(max(900px,80dvh))] relative">
-                    <div className="p-2 bg-background/30 rounded-3xl border border-border/30 w-[100%] md:w-[50%]">
+            <div className="flex-1 relative rounded-3xl overflow-hidden min-h-[calc(max(600px,73dvh))]">
+                <div className="z-10 flex gap-5 flex-col lg:justify-center items-center h-full min-h-[calc(max(600px,73dvh))] relative">
+                    <div className="p-2 bg-background/30 rounded-3xl border border-border/30 w-[100%] lg:w-[50%]">
                         <motion.div
                             variants={card}
                             className="lg:col-span-4 rounded-b-none border border-border rounded-2xl p-8 flex flex-col items-center justify-center text-center overflow-hidden bg-background/70 w-[100%]">
@@ -332,9 +332,7 @@ export default function AboutMe() {
 
                         </motion.div>
                         <div className="">
-
                             <GlassIcons items={items} className="px-5 rounded-3xl bg-background/70 mt-0 rounded-t-none" />
-
                         </div>
                     </div>
                     <motion.div
@@ -356,7 +354,7 @@ export default function AboutMe() {
                                         key={skill.name}
                                         className="w-full h-full rounded-full bg-muted/90 flex flex-col items-center justify-center text-xs sm:text-sm font-medium px-3 p-4"
                                     >
-                                        <Icon icon={skill.icon} className="w-[60%] h-[60%] shrink-0" />
+                                        <Icon icon={skill.icon} className="w-[60%] h-[60%] shrink-0 min-w-[20px] min-h-[20px]" />
                                         {/* <p className="text-xs">{skill.name}</p> */}
                                     </div>
                                 </div>
