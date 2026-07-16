@@ -8,11 +8,12 @@ import Grainient from "@/components/Grainient";
 import { CylinderCarousel } from "@/components/motion/cylinder-carousel";
 import { Icon } from "@iconify/react";
 import { NumberTicker } from "@/components/motion/number-ticker";
-
+import { MagneticButton } from "@/components/motion/button";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 
 import GlassIcons from "@/components/magicui/GlassIcon";
 import items from "./items"
+import Link from "next/link";
 const stats = [
     { value: "4+", label: "Years Experience" },
     { value: "100+", label: "Problems Solved" },
@@ -227,7 +228,7 @@ export default function AboutMe() {
     return (
         <section
             id="about"
-            className="relative min-h-screen bg-background/50 px-4 py-20 overflow-x-hidden flex justify-center gap-3"
+            className="relative min-h-screen bg-background/50 flex-col lg:flex-row px-4 py-20 overflow-x-hidden flex justify-center gap-3"
         >
             <div className="flex-1">
                 <div className="lg:col-span-8  grid grid-cols-1 gap-6 overflow-hidden">
@@ -282,21 +283,36 @@ export default function AboutMe() {
                         </motion.div>
                     </div>
 
-                    <div className="flex justify-center items-center w-full h-full">
-                        <div className="absolute flex items-center justify-center bottom-0">
-                            <TextHoverEffect text="HIRE ME" />
+                    <div className="">
+                        <div className="relative z-10 flex flex-col items-center gap-6">
+                            <TextHoverEffect text="RESUME" />
+                            <div className="flex flex-wrap justify-center gap-4 bg-muted p-1 rounded-full border border-border/40">
+                                <Link href="https://www.linkedin.com/in/gauravmrjatt/" target="_blank" rel="noopener noreferrer">
+                                    <MagneticButton className=" border-0" variant="primary" size="lg">
+                                        <Icon icon="mdi:hand-wave" className="w-5 h-5" />
+                                        Hire Me
+                                    </MagneticButton>
+                                </Link>
+                                <Link  href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                                    <MagneticButton className="bg-background border-0" variant="outline" size="lg">
+                                        <Icon icon="mdi:eye" className="w-5 h-5" />
+                                        View
+                                    </MagneticButton>
+                                </Link>
+                                <Link download href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                                    <MagneticButton className="bg-background border-0" variant="outline" size="lg">
+                                        <Icon icon="mdi:download" className="w-5 h-5" />
+                                        Download
+                                    </MagneticButton>
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <button className="relative flex items-center gap-3 overflow-hidden rounded-full border px-6 py-3 transition-all duration-500 sm:px-8 sm:py-4">Hire Me</button>
-                        <button className="relative flex items-center gap-3 overflow-hidden rounded-full border px-6 py-3 transition-all duration-500 sm:px-8 sm:py-4">View Resume</button>
-                        <button className="relative flex items-center gap-3 overflow-hidden rounded-full border px-6 py-3 transition-all duration-500 sm:px-8 sm:py-4">Download Resume</button>
                     </div>
                 </div>
             </div>
-            <div className="flex-1 relative rounded-3xl overflow-hidden">
-                <div className="z-10 flex gap-5 flex-col justify-center items-center h-full relative">
-                    <div className="p-2 bg-background/30 rounded-3xl border border-border/30 w-[50%]">
+            <div className="flex-1 relative rounded-3xl overflow-hidden min-h-[calc(max(900px,80dvh))]">
+                <div className="z-10 flex gap-5 flex-col justify-center items-center h-full min-h-[calc(max(900px,80dvh))] relative">
+                    <div className="p-2 bg-background/30 rounded-3xl border border-border/30 w-[100%] md:w-[50%]">
                         <motion.div
                             variants={card}
                             className="lg:col-span-4 rounded-b-none border border-border rounded-2xl p-8 flex flex-col items-center justify-center text-center overflow-hidden bg-background/70 w-[100%]">
