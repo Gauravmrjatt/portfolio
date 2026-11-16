@@ -36,7 +36,7 @@ const projects = [
     title: "Lead Tracking System",
     icon: "skill-icons:nextjs-dark",
     description:
-      "Invite-only affiliate marketing platform with fraud detection, real-time dashboards, and automated payout engine.",
+      "Multi-tenant affiliate lead-tracking platform: 527K leads from 1.77M tracked clicks. Idempotent postback ingestion on a unique compound index, RabbitMQ fan-out with dead-letter queues, Redis-backed caps and caching, and load-tested at 1,000 requests/s.",
     link: "https://panel3.logicpay.in/",
     gradient: "from-violet-500/10 via-purple-500/10 to-fuchsia-500/10",
     borderColor: "border-violet-500/20 dark:border-violet-400/20",
