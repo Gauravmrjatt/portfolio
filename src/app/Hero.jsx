@@ -64,7 +64,7 @@ export default function Hero() {
                     {/* <TextAnimate animation="slideLeft" by="character"> */}
                     <HeroPill
                         icon={<StarIcon />}
-                        text="Full Stack Developer"
+                        text="Backend Engineer · Go · Node.js"
                     />
                     {/* </TextAnimate> */}
                 </span>
@@ -88,7 +88,7 @@ export default function Hero() {
                 </h1>
                 <span className="mt-5 font-sans">
                     <TextAnimate animation="slideLeft" by="character" className="text-pretty md:ml-7 text-background-accent">
-                        I'm a full-stack web-developer from India
+                        I build backends that run in production
                     </TextAnimate>
 
                     <div className="mt-6 mb-4 pb-[30px]">

@@ -19,15 +19,15 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL("https://gauravmrjatt.vercel.app"),
   title: {
-    default: "Gaurav Chaudhary | Full-Stack Developer",
+    default: "Gaurav Chaudhary | Backend Engineer",
     template: "%s | Gaurav Chaudhary",
   },
   description:
-    "Full-Stack Developer specializing in MERN, Next.js, and scalable backend systems. Explore projects, skills, and experience.",
+    "Backend engineer working in Go and Node.js. Production systems: affiliate tracking at 527K leads, a multi-carrier logistics platform, and a webhook delivery engine.",
   keywords: [
     "Gaurav Chaudhary",
     "Gauravmrjatt",
-    "Full-Stack Developer",
+    "Backend Engineer",
     "MERN Stack",
     "Next.js Developer",
     "Web Developer India",
@@ -40,9 +40,9 @@ export const metadata = {
     locale: "en_IN",
     url: "https://gauravmrjatt.vercel.app",
     siteName: "Gaurav Chaudhary",
-    title: "Gaurav Chaudhary | Full-Stack Developer",
+    title: "Gaurav Chaudhary | Backend Engineer",
     description:
-      "Full-Stack Developer specializing in MERN, Next.js, and scalable backend systems.",
+      "Backend engineer working in Go and Node.js. 527K leads, INR 2.8 Cr in payments, 1,700+ orders.",
     images: [
       {
         url: "/gaurav-chaudhary.png",
@@ -54,9 +54,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gaurav Chaudhary | Full-Stack Developer",
+    title: "Gaurav Chaudhary | Backend Engineer",
     description:
-      "Full-Stack Developer specializing in MERN, Next.js, and scalable backend systems.",
+      "Backend engineer working in Go and Node.js. 527K leads, INR 2.8 Cr in payments, 1,700+ orders.",
     images: ["/gaurav-chaudhary.png"],
   },
   robots: {

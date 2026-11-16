@@ -100,7 +100,7 @@ export function About() {
               overflow-hidden bg-background/50
             "
                     >
-                        <img alt="Gaurav Chaudhary — Full-Stack Developer from Mathura, India"
+                        <img alt="Gaurav Chaudhary — Backend engineer from Mathura, India"
                             width={240}
                             height={240}
                             className="rounded-full aspect-square object-cover max-w-[240px] w-full outline outline-1 outline-black/10 dark:outline-white/10"
@@ -111,7 +111,7 @@ export function About() {
                             data-loaded="true" />
 
                         <h2 className="text-3xl font-bold mt-6">Gaurav</h2>
-                        <p className="text-muted-foreground">Full-Stack Developer</p>
+                        <p className="text-muted-foreground">Backend Engineer</p>
 
                         <div className="flex items-center gap-2 text-muted-foreground mt-3">
                             <MapPin className="h-4 w-4 shrink-0" />
@@ -140,12 +140,12 @@ export function About() {
                         >
                             <h3 className="text-3xl font-bold mb-6 text-balance">About Me</h3>
                             <p className="text-base sm:text-lg text-muted-foreground text-pretty leading-relaxed max-w-full">
-                                I’m a passionate Full-Stack Developer who enjoys building scalable,
-                                performant, and pixel-perfect web experiences. I specialize in
-                                MERN, LAMP, Next.js, and backend-focused systems.
+                                I build and run backend systems that stay correct under bad input, duplicate
+                                traffic and slow third-party APIs. I work mainly in Go and Node.js, with
+                                PostgreSQL, Redis and RabbitMQ under the hood.
                             </p>
                             <p className="text-base sm:text-lg text-muted-foreground text-pretty leading-relaxed max-w-full mt-4">
-                                Over the past 4+ years, I&apos;ve built real-time collaborative platforms,
+                                Since 2023 I&apos;ve built real-time collaborative platforms,
                                 reward distribution systems serving thousands of users, and
                                 competitive quiz applications with live leaderboards. I focus on
                                 writing clean, maintainable code and designing systems that scale.
@@ -248,12 +248,12 @@ export default function AboutMe() {
                         >
                             <h3 className="text-3xl font-bold mb-6 text-balance">About Me</h3>
                             <p className="text-base sm:text-lg text-muted-foreground text-pretty leading-relaxed max-w-full">
-                                I’m a passionate Full-Stack Developer who enjoys building scalable,
-                                performant, and pixel-perfect web experiences. I specialize in
-                                MERN, LAMP, Next.js, and backend-focused systems.
+                                I build and run backend systems that stay correct under bad input, duplicate
+                                traffic and slow third-party APIs. I work mainly in Go and Node.js, with
+                                PostgreSQL, Redis and RabbitMQ under the hood.
                             </p>
                             <p className="text-base sm:text-lg text-muted-foreground text-pretty leading-relaxed max-w-full mt-4">
-                                Over the past 4+ years, I&apos;ve built real-time collaborative platforms,
+                                Since 2023 I&apos;ve built real-time collaborative platforms,
                                 reward distribution systems serving thousands of users, and
                                 competitive quiz applications with live leaderboards. I focus on
                                 writing clean, maintainable code and designing systems that scale.
@@ -316,7 +316,7 @@ export default function AboutMe() {
                         <motion.div
                             variants={card}
                             className="lg:col-span-4 rounded-b-none border border-border rounded-2xl p-8 flex flex-col items-center justify-center text-center overflow-hidden bg-background/70 w-[100%]">
-                            <img alt="Gaurav Chaudhary — Full-Stack Developer from Mathura, India"
+                            <img alt="Gaurav Chaudhary — Backend engineer from Mathura, India"
                                 width={200}
                                 height={200}
                                 className="rounded-full aspect-square object-cover max-w-[240px]"
@@ -324,7 +324,7 @@ export default function AboutMe() {
                                 srcSet="/me.jpeg"
                                 data-loaded="true" />
                             <h2 className="text-3xl font-bold mt-6">Gaurav Chaudhary</h2>
-                            <p className="text-muted-foreground">Full-Stack Developer</p>
+                            <p className="text-muted-foreground">Backend Engineer</p>
                             <div className="flex items-center gap-2 text-muted-foreground mt-3">
                                 <MapPin className="h-4 w-4 shrink-0" />
                                 <span className="text-sm">Mathura, India</span>
